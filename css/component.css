@@ -320,6 +320,48 @@
   transition: all 0.2s ease;
 }
 
+#left-padding input{
+    display : block;
+    width   : 40px;
+    height  : 32px;
+    position: absolute;
+    top     : -7px;
+    left    : -5px;
+
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select        : none;
+}
+
+
+.left-designer{
+  position: fixed;
+  width   : 600px;
+  height  : 100%;
+
+  z-index               : 10;
+  background-color      : #f8f9fa;
+  top                   : 0;
+  left                  : -50px;
+  -webkit-font-smoothing: antialiased;
+  transform-origin      : 0% 0%;
+      transform : translateX(-100%);
+    transition : transform 1s cubic-bezier(0.77, 0.2, 0.05, 1) ;
+
+}
+#left-padding input ~ .left-designer {
+
+
+}
+#left-padding input:checked ~ .left-designer {
+
+  transform: none;
+}
 .hero__right {
   position: absolute;
   top: 0;
@@ -357,7 +399,7 @@
   font-size: 25px;
   top: 91vh;
   left: -25px;
-  color: #6c757d;
+  color: #456e84;
   transform: rotate(90deg);
 }
 .hero .scroll span {
@@ -365,7 +407,7 @@
   top: 90vh;
   left: 10px;
   font-size: 12px;
-  color: #6c757d;
+  color: #456e84;
   font-family: Geneva, Tahoma, sans-serif;
   writing-mode: vertical-rl;
   text-orientation: sideways;
