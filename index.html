@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
   <title>Yun-Han's resume</title>
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
@@ -22,29 +22,29 @@
     <!-- Start Header -->
     <header class="header">
 
-      <div class="navbar u-clearfix">
-        <div class="my-logo navbar__my-logo">
+      <div class="navbar">
+        <div class="navbar__my-logo">
           <a tabindex="1" href="index.html" class="icon icon-btn">
             <i class="logo icon-cyh">
             </i>
           </a>
         </div>
 
-        <div role=" navigation" class="nav nav__menu">
+        <div role="navigation" class="nav__menu">
           <label id="menu-toggle">
             <input type="checkbox" name="Navbar menu" />
             <span></span>
             <span></span>
             <span></span>
+              <ul class=" menu__item rwd-popup">
+                <li><a class="item" tabindex="0" role="button" href="#"> About </a></li>
+                <li><a class="item" tabindex="0" role="button" href="#"> Skill </a></li>
+                <li><a class="item" tabindex="0" role="button" href="#"> Experience </a>
+                </li>
+                <li><a class="item" tabindex="0" role="button" href="#"> Work </a></li>
+                <li><a class="item" tabindex="0" role="button" href="#"> Contact </a></li>
+              </ul>
 
-            <ul class=" menu__item rwd-popup">
-              <li><a tabindex="0" role="button" class="item" href="#" data-scroll-target="manifesto"> About </a></li>
-              <li><a tabindex="0" role="button" class="item" href="#" data-scroll-target="manifesto"> Skill </a></li>
-              <li><a tabindex="0" role="button" class="item" href="#" data-scroll-target="manifesto"> Experience </a>
-              </li>
-              <li><a tabindex="0" role="button" class="item" href="#" data-scroll-target="manifesto"> Work </a></li>
-              <li><a tabindex="0" role="button" class="item" href="#" data-scroll-target="manifesto"> Contact </a></li>
-            </ul>
           </label>
         </div>
       </div>
@@ -78,7 +78,7 @@
               <div class="right-coder"></div>
             </label>
           </div>
-          <div class="scroll">
+          <div class="scroll color-darkblue">
             <i class="material-icons">
               trending_flat
             </i>

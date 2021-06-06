@@ -36,57 +36,58 @@
   top: 0;
   left: 0;
   width: 100%;
+  margin: 0 auto;
   z-index: 100;
 }
 /* navbar */
 .navbar {
+  display: flex;
   /* border: 1px solid #000; */
   margin: 0 12px;
+  justify-content: space-between;
+  align-items: center;
 }
 .navbar__my-logo {
-  padding: 24px 200px 24px 24px;
-  float: left;
+  padding: 30px 0px 18px 24px;
 }
 /* icon-btn */
 .icon-btn {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  font-size: 32px;
+  /* border: 1px solid #000; */
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  font-size: 35px;
   color: #456e84;
 }
 .icon-btn :hover {
   color: #f8f9fa;
 }
-@media (min-width: 1024px) {
-  .navbar {
-    margin: 24px 24px;
-  }
-  .icon-btn .logo {
-    font-size: 48px;
-  }
-}
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .navbar {
     margin: 0 0px;
   }
   .icon-btn .logo {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 
 /* menu */
 .nav__menu {
-  float: right;
+  display: flex;
 }
-.menu__item > li {
-  float: left;
+.menu__item {
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 12px;
 }
 .menu__item > li > a {
-  padding: 24px 12px;
+  display: block;
+  padding: 12px 12px;
   color: #456e84;
-  font-family: "Quantico", "Noto Sans TC";
+  font-family: 'Quantico', 'Noto Sans TC';
+  font-size: 20px;
 }
 .menu__item > li > a:hover {
   color: #f8f9fa;
@@ -102,16 +103,10 @@
   user-select: none;
 }
 #menu-toggle input {
-  position: absolute;
-  top: -7px;
-  left: -5px;
-
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  display: none;
 }
-
 #menu-toggle span {
-  display: block;
+  display: none;
   top: 24px;
   right: 12px;
   width: 24px;
@@ -122,25 +117,14 @@
   border-radius: 3px;
   z-index: 1000;
   transform-origin: 4px 0px;
-  visibility: hidden;
 }
-@media (min-width: 1024px) {
-  .menu__item {
-    margin-top: -6px;
-  }
-  .menu__item > li > a {
-    font-size: 22px;
-    padding: 0 20px;
-  }
-}
+
 /* rwd-popup */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .rwd-popup {
     position: fixed;
     width: 350px;
     height: 100%;
-
-    padding: 80px 42px 0 0;
 
     z-index: 10;
     background-color: #f8f9fa;
@@ -153,7 +137,6 @@
   }
 
   #menuToggle {
-    display: block;
     position: relative;
     z-index: 1;
 
@@ -161,26 +144,24 @@
     user-select: none;
   }
   #menu-toggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
     position: absolute;
+    width: 40px;
+    height: 40px;
     top: -7px;
-    left: -5px;
+    left: -15px;
 
+    cursor: pointer;
     opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
-
+    z-index: 20; /* and place it over the hamburger */
     -webkit-touch-callout: none;
   }
   #menu-toggle span {
-    opacity: 1;
+    display: block;
     cursor: pointer;
-    visibility: visible;
-    margin-bottom: 5px;
-    position: relative;
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+
+    top: 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
   }
   #menu-toggle span:first-child {
     transform-origin: 0% 0%;
@@ -201,17 +182,19 @@
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
   }
-  .menu__item li {
-    float: none;
-    flex: 1;
+  .menu__item {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    padding: 0 24px;
-    margin-top: -12px;
+    justify-content: flex-start;
+
+    padding: 80px 60px;
   }
   .rwd-popup .item {
     text-align: right;
     letter-spacing: 4px;
+    padding: 20px 15px;
+    font-size: 18px;
   }
   .menu__item > li > a:hover {
     color: #71d0d6;
@@ -243,14 +226,17 @@
 }
 .hero__hello {
   position: absolute;
-  top: 30vh;
+  top: 25vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
   text-align: center;
 }
+.hero__hello h1 {
+  font-size: 160px;
+}
 .hero__hello h4 {
-  font-size: 28px;
+  font-size: 42px;
   color: #fff;
   margin-top: -15px;
 }
@@ -259,8 +245,9 @@
   margin-bottom: 16px;
   color: #5f666d;
   font-family: monospace;
-  font-size: 20px;
+  font-size: 30px;
   width: 38ch;
+  line-height: 50px;
   border-right: 3px solid;
   overflow: hidden;
   animation: typing 3s steps(22), blink 0.5s step-end infinite;
@@ -320,46 +307,41 @@
   transition: all 0.2s ease;
 }
 
-#left-padding input{
-    display : block;
-    width   : 40px;
-    height  : 32px;
-    position: absolute;
-    top     : -7px;
-    left    : -5px;
+#left-padding input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
 
-    opacity: 0;
-    /* hide this */
-    z-index: 2;
-    /* and place it over the hamburger */
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
 
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select        : none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-
-.left-designer{
+.left-designer {
   position: fixed;
-  width   : 600px;
-  height  : 100%;
+  width: 600px;
+  height: 100%;
 
-  z-index               : 10;
-  background-color      : #f8f9fa;
-  top                   : 0;
-  left                  : -50px;
+  z-index: 10;
+  background-color: #f8f9fa;
+  top: 0;
+  left: -50px;
   -webkit-font-smoothing: antialiased;
-  transform-origin      : 0% 0%;
-      transform : translateX(-100%);
-    transition : transform 1s cubic-bezier(0.77, 0.2, 0.05, 1) ;
-
+  transform-origin: 0% 0%;
+  transform: translateX(-100%);
+  transition: transform 1s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 #left-padding input ~ .left-designer {
-
-
 }
 #left-padding input:checked ~ .left-designer {
-
   transform: none;
 }
 .hero__right {
@@ -396,51 +378,32 @@
 }
 .hero .scroll i {
   position: absolute;
-  font-size: 25px;
-  top: 91vh;
-  left: -25px;
-  color: #456e84;
+  font-size: 40px;
+  top: 90vh;
+  left: -40px;
   transform: rotate(90deg);
 }
 .hero .scroll span {
   position: absolute;
   top: 90vh;
   left: 10px;
-  font-size: 12px;
-  color: #456e84;
+  font-size: 14px;
   font-family: Geneva, Tahoma, sans-serif;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   transform: rotate(-180deg);
 }
-@media (min-width: 1024px) {
-  .hero__hello h1 {
-    font-size: 200px;
-  }
-  .hero__hello h4 {
-    font-size: 56px;
-    margin-bottom: 50px;
-  }
-  .hero__hello h5 {
-    font-size: 40px;
-  }
-  .hero .hero__left .left-icon,
-  .hero .hero__right .right-icon {
-    font-size: 60px;
-  }
 
-  .hero .scroll i {
-    font-size: 50px;
-    left: -50px;
+@media (max-width: 767px) {
+  .hero__hello {
+    top: 35vh;
   }
-  .hero .scroll span {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 768px) {
   .hero__hello h1 {
     font-size: 80px;
+  }
+  .hero__hello h4 {
+    font-size: 32px;
+    white-space: nowrap;
   }
   .hero__hello h5 {
     display: none;
