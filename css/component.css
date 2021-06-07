@@ -346,10 +346,10 @@
 
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
-  transform: translateX(100%);
   transition: transform 1s ease-in-out;
 }
 .left-designer {
+  display: block;
   top: 0;
   left: 0;
 
@@ -408,13 +408,14 @@
 }
 
 .right-coder {
+  display: block;
   background-image: url(../images/about__code.png);
   background-position: bottom;
   top: 0;
   right: 0;
   transform: translateX(100%);
 }
-.right-coder h4 {
+.right-coder h5 {
   position: absolute;
   font-size: 30px;
   color: #5f666d;
