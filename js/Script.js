@@ -1,29 +1,33 @@
 // padding icon hide
-function Icon_hidden(obj) {
+function icon_hidden(obj) {
   if (obj.style.display == 'block') {
     obj.style.display = 'none';
   } else {
     obj.style.display = 'block';
   }
 }
-function padding_slide(obj) {}
+
+function slider() {
+  let ds = document.getElementById('design-slide');
+  let cs = document.getElementById('code-slide');
+  ds.style.opacity = '1';
+  cs.style.opacity = '1';
+}
 
 window.onload = function () {
   let dsn = document.getElementById('design');
   let cod = document.getElementById('code');
   let btnL = document.getElementById('left-btn');
   let btnR = document.getElementById('right-btn');
-  let ds = document.getElementById('design-slide');
-  let cs = document.getElementById('code-slide');
 
   dsn.onclick = function () {
-    Icon_hidden(btnR);
-    padding_slide(ds);
+    icon_hidden(btnR);
+    slider();
     // return false;
   };
   cod.onclick = function () {
-    Icon_hidden(btnL);
-    padding_slide(cs);
+    icon_hidden(btnL);
+    slider();
     // return false;
   };
 };
