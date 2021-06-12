@@ -1,0 +1,23 @@
+/*
+  05 mixin
+*/
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

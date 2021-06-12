@@ -1,0 +1,150 @@
+/*
+  03 base
+*/
+
+//$Catalog
+/*-------------------------*/
+//   Catalog
+//   font
+//   Document
+//   Typography
+//   Color
+
+/*-------------------------*/
+// $font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;900&family=Quantico&display=swap');
+
+/*-------------------------*/
+// $Document
+*,
+*::after,
+*::before {
+  position: relative;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*-------------------------*/
+/** $Typography
+/*-------------------------*/
+
+/* Global */
+body,
+html {
+  font-family: $font-ios;
+}
+/* heading */
+/* prettier-ignore */
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  color: #484848;
+  font-family: $font-noto;
+}
+h1 {
+  font-size: 130px;
+  font-weight: 900;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h3 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h5 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1; //1倍
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+h6 {
+  font-size: 16px;
+  font-weight: 800;
+}
+p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $font-ios;
+  line-height: 32px; // 左右間距
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-size: 48px;
+  font-weight: 900;
+  font-family: 'Raleway', $font-ios;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+a {
+  color: #484848;
+  text-decoration: none;
+  &:active,
+  hover,
+  focus {
+    text-decoration: none;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/*-------------------------*/
+// $Color
+/*-------------------------*/
+/* background color */
+.bg-color-yellow {
+  background-color: #f3d570;
+}
+.bg-color-pink {
+  background-color: #ff957f;
+}
+.bg-color-lightblue {
+  background-color: #c3d4de;
+}
+.bg-color-darkblue {
+  background-color: #456e84;
+}
+.bg-color-black {
+  background-color: #484848;
+}
+.bg-color-grey {
+  background-color: #cbcbcb;
+}
+.bg-color-white {
+  background-color: #fefefe;
+}
+
+// $Utility
