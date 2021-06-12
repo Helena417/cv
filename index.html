@@ -7,12 +7,12 @@
   <title>Yun-Han's resume</title>
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+  <!-- font style -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;900&family=Quantico&display=swap" rel="stylesheet">
 
   <!-- css -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/component.css">
-
+  <link rel="stylesheet" href="css/all.css">
 
 
 <body>
@@ -23,12 +23,12 @@
     <header class="header">
 
       <div class="navbar">
-        <div class="navbar__my-logo">
-          <a tabindex="1" href="index.html" class="icon icon-btn">
-            <i class="logo icon-cyh">
+        <h1 class="navbar__my-logo" alt="logo">
+          <a tabindex="1" href="index.html" class=" icon-btn">
+            <i class="icon-cyh">
             </i>
           </a>
-        </div>
+        </h1>
 
         <div role="navigation" class="nav__menu">
           <label id="menu-toggle">
@@ -41,7 +41,6 @@
                 <li><a class="item" tabindex="0" role="button" href="#"> Skill </a></li>
                 <li><a class="item" tabindex="0" role="button" href="#"> Experience </a>
                 </li>
-                <li><a class="item" tabindex="0" role="button" href="#"> Work </a></li>
                 <li><a class="item" tabindex="0" role="button" href="#"> Contact </a></li>
               </ul>
 
@@ -58,8 +57,8 @@
       <div class="hero">
         <div class="hero__hello">
           <h1>Hello</h1>
-          <h4>I'm Yun Han.</h4>
-          <h5>I am a designer and also a developer.</h5>
+          <h2>I'm Yun Han.</h2>
+          <h3>I am a designer and also a developer.</h3>
         </div>
         <section class="hero__left">
           <div class="padding">
@@ -67,11 +66,11 @@
               <input id="design" type="checkbox" name="designer" />
               <i id="left-btn" style="display:block" class="left-icon icon-left-open"></i>
               <div id="design-slide"  class="left-designer">
-                <h3>DESIGN</h3>>
+                <h4>DESIGN</h4>>
                 <div class="designer-whiteBlock"></div>
                 <h1>I CAN DO IT</h1>
-                <h5>Designer Skills // </h5>
-                <h6>UI/UX Design &emsp; Interactive Design</br>Graphic Design &emsp;  Industrial Design</h6>
+                <h2>Designer Skills // </h2>
+                <h3>UI/UX Design &emsp; Interactive Design</br>Graphic Design &emsp;  Industrial Design</h3>
               </div>
             </label>
           </div>
@@ -82,7 +81,7 @@
               <input id="code" type="checkbox" name="coder" />
               <i id="right-btn" style="display:block" class="right-icon icon-right-open"></i>
               <div id="code-slide" class="right-coder">
-                <h5>Developer Skills</h5>
+                <h2>Developer Skills</h2>
                 <h1>Hello</br>World</h1>
               </div>
             </label>
