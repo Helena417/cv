@@ -366,8 +366,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -1607,7 +1606,7 @@ ul {
 /** $Header
 ---------------------------*/
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -1618,8 +1617,7 @@ ul {
 /* navbar */
 .navbar {
   display: flex;
-  /* border: 1px solid #000; */
-  margin: 0 12px;
+  margin: 0 20px;
   justify-content: space-between;
   align-items: center;
 }
@@ -1628,11 +1626,12 @@ ul {
     margin: 0 0px;
   }
 }
-.navbar .navbar__my-logo {
+
+.nav__my-logo {
   margin: 0;
   padding: 30px 0px 18px 24px;
 }
-.navbar .navbar__my-logo .icon-btn {
+.nav__my-logo .icon-btn {
   /* border: 1px solid #000; */
   display: block;
   width: 50px;
@@ -1641,11 +1640,11 @@ ul {
   font-size: 35px;
   color: #456e84;
 }
-.navbar .navbar__my-logo .icon-btn:hover {
+.nav__my-logo .icon-btn:hover {
   color: #fefefe;
 }
 @media (max-width: 767px) {
-  .navbar .navbar__my-logo .icon-btn {
+  .nav__my-logo .icon-btn {
     font-size: 28px;
   }
 }
@@ -1676,20 +1675,16 @@ ul {
   }
 }
 .nav__menu #menu-toggle input {
-  display: none;
+  position: absolute;
+  opacity: 0;
 }
 @media (max-width: 767px) {
   .nav__menu #menu-toggle input {
-    position: absolute;
     width: 40px;
     height: 40px;
     top: -7px;
     left: -15px;
     cursor: pointer;
-    opacity: 0;
-    /* hide this */
-    z-index: 20;
-    /* and place it over the hamburger */
     -webkit-touch-callout: none;
   }
   .nav__menu #menu-toggle input:checked ~ span {
@@ -1801,52 +1796,27 @@ ul {
   -o-user-select: none;
   -ms-user-select: none;
       user-select: none;
-  /* hero__hello*/
-  /* hero__left Right*/
 }
-.hero .padding i {
-  font-size: 45px;
-  color: #484848;
-}
-.hero .scroll i {
-  position: absolute;
-  font-size: 40px;
-  top: 90vh;
-  left: -40px;
-  transform: rotate(90deg);
-  color: #626262;
-}
-.hero .scroll span {
-  position: absolute;
-  top: 90vh;
-  left: 10px;
-  font-size: 14px;
-  font-family: Geneva, Tahoma, sans-serif;
-  -ms-writing-mode: tb-rl;
-      writing-mode: vertical-rl;
-  -webkit-text-orientation: sideways;
-          text-orientation: sideways;
-  transform: rotate(-180deg);
-  color: #626262;
-}
-.hero .hero__hello {
+
+/* hero__hello*/
+.hero__hello {
   position: absolute;
   margin: auto;
   top: 25vh;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 10;
   text-align: center;
 }
-.hero .hero__hello h1 {
+.hero__hello h1 {
   font-size: 160px;
 }
-.hero .hero__hello h2 {
+.hero__hello h2 {
   font-size: 42px;
   color: #fff;
   margin-top: -15px;
 }
-.hero .hero__hello h3 {
+.hero__hello h3 {
   margin-bottom: 16px;
   color: #5f666d;
   font-family: monospace;
@@ -1880,7 +1850,31 @@ ul {
     border-color: transparent;
   }
 }
-.hero .hero__left {
+
+/* hero__left Right*/
+.icon {
+  position: absolute;
+  top: 50vh;
+  z-index: 1000;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: #484848;
+}
+
+.page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  /* transform-origin: 0% 0%; */
+  transition: transform 1s ease-in-out;
+}
+
+.hero__left {
   position: absolute;
   top: 0;
   left: 0;
@@ -1888,16 +1882,12 @@ ul {
   width: 50%;
   height: 100%;
 }
-.hero .hero__left .left-icon {
-  position: absolute;
-  top: 50vh;
-  z-index: 1000;
-  transform: translateY(-50%);
+.hero__left .left-icon {
   left: 40px;
   -webkit-animation: moveLeft 1s 3.5s infinite alternate;
           animation: moveLeft 1s 3.5s infinite alternate;
 }
-.hero .hero__left .left-icon:hover {
+.hero__left .left-icon:hover {
   font-size: 50px;
   color: #f8f9fa;
   transition: all 0.2s ease;
@@ -1918,38 +1908,20 @@ ul {
     left: 20px;
   }
 }
-.hero .hero__left .left-designer {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-font-smoothing: antialiased;
-  /* transform-origin: 0% 0%; */
-  transition: transform 1s ease-in-out;
+.hero__left .left-designer {
   display: block;
   top: 0;
   left: 0;
   background-image: url(../images/about__design.png);
   transform: translateX(-100%);
 }
-.hero .hero__left .left-designer .designer-whiteBlock {
-  position: absolute;
-  width: 800px;
-  height: 100px;
-  top: 140px;
-  right: 8%;
-  background-color: #fefefe;
-}
-.hero .hero__left .left-designer h1 {
+.hero__left .left-designer h1 {
   position: absolute;
   font-size: 120px;
   top: 40px;
   right: 8%;
 }
-.hero .hero__left .left-designer h2 {
+.hero__left .left-designer h2 {
   position: absolute;
   color: #fefefe;
   font-size: 40px;
@@ -1957,7 +1929,7 @@ ul {
   top: 70%;
   right: 8%;
 }
-.hero .hero__left .left-designer h3 {
+.hero__left .left-designer h3 {
   position: absolute;
   color: #626262;
   font-size: 25px;
@@ -1966,7 +1938,7 @@ ul {
   top: 82%;
   right: 8%;
 }
-.hero .hero__left .left-designer h4 {
+.hero__left .left-designer h4 {
   position: absolute;
   color: #fefefe;
   font-size: 20px;
@@ -1979,7 +1951,16 @@ ul {
   transform: rotate(-180deg);
   letter-spacing: 2px;
 }
-.hero .hero__right {
+.hero__left .designer-whiteBlock {
+  position: absolute;
+  width: 800px;
+  height: 100px;
+  top: 140px;
+  right: 8%;
+  background-color: #fefefe;
+}
+
+.hero__right {
   position: absolute;
   top: 0;
   right: 0;
@@ -1987,16 +1968,33 @@ ul {
   width: 50%;
   height: 100%;
 }
-.hero .hero__right .right-icon {
+.hero__right .scroll i {
   position: absolute;
-  top: 50vh;
-  z-index: 1000;
-  transform: translateY(-50%);
+  font-size: 40px;
+  top: 90vh;
+  left: -40px;
+  transform: rotate(90deg);
+  color: #626262;
+}
+.hero__right .scroll span {
+  position: absolute;
+  top: 90vh;
+  left: 10px;
+  font-size: 14px;
+  font-family: Geneva, Tahoma, sans-serif;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  -webkit-text-orientation: sideways;
+          text-orientation: sideways;
+  transform: rotate(-180deg);
+  color: #626262;
+}
+.hero__right .right-icon {
   right: 50px;
   -webkit-animation: moveRight 1s 3.5s infinite alternate;
           animation: moveRight 1s 3.5s infinite alternate;
 }
-.hero .hero__right .right-icon:hover {
+.hero__right .right-icon:hover {
   font-size: 50px;
   color: #f8f9fa;
   transition: all 0.2s ease;
@@ -2006,7 +2004,7 @@ ul {
     right: 50px;
   }
   100% {
-    right: 25px;
+    right: 30px;
   }
 }
 @keyframes moveRight {
@@ -2014,20 +2012,10 @@ ul {
     right: 50px;
   }
   100% {
-    right: 25px;
+    right: 30px;
   }
 }
-.hero .hero__right .right-coder {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  -webkit-font-smoothing: antialiased;
-  /* transform-origin: 0% 0%; */
-  transition: transform 1s ease-in-out;
+.hero__right .right-coder {
   display: block;
   background-image: url(../images/about__code.png);
   background-position: bottom;
@@ -2035,68 +2023,69 @@ ul {
   right: 0;
   transform: translateX(100%);
 }
-.hero .hero__right .right-coder h1 {
+.hero__right .right-coder h1 {
   position: absolute;
   font-size: 160px;
   top: 35vh;
   left: 5%;
 }
-.hero .hero__right .right-coder h2 {
+.hero__right .right-coder h2 {
   position: absolute;
   font-size: 30px;
   color: #555555;
   top: 3%;
   left: 5.5%;
 }
-.hero #left-padding {
+
+.page-id {
   display: block;
   position: relative;
   z-index: 100;
   cursor: pointer;
 }
-.hero #left-padding input {
+
+#left-page input {
   opacity: 0;
   -webkit-touch-callout: none;
 }
-.hero #left-padding input:checked ~ i {
+#left-page input:checked ~ i {
   color: #f8f9fa;
 }
-.hero #left-padding input:checked ~ .left-designer {
+#left-page input:checked ~ .left-designer {
   transform: none;
 }
-.hero #right-padding {
-  display: block;
-  position: relative;
-  z-index: 100;
-  cursor: pointer;
-}
-.hero #right-padding input {
+
+#right-page input {
   opacity: 0;
   -webkit-touch-callout: none;
 }
-.hero #right-padding input:checked ~ .right-coder {
+#right-page input:checked ~ .right-coder {
   transform: none;
 }
+
 @media (max-width: 1023px) {
-  .hero .hero__hello {
+  .hero__hello {
     top: 32vh;
   }
-  .hero .hero__hello h1 {
+  .hero__hello h1 {
     font-size: 150px;
   }
-  .hero .hero__hello h3 {
+  .hero__hello h3 {
     font-size: 42px;
     white-space: nowrap;
   }
-  .hero #left-padding,
-.hero #right-padding {
+
+  #left-page,
+#right-page {
     display: none;
   }
-  .hero .scroll i,
-.hero .scroll span {
+
+  .scroll i,
+.scroll span {
     -webkit-animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
             animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
   }
+
   @-webkit-keyframes scroll_move {
     0% {
       top: 90vh;
@@ -2105,6 +2094,7 @@ ul {
       top: 92vh;
     }
   }
+
   @keyframes scroll_move {
     0% {
       top: 90vh;
@@ -2115,28 +2105,31 @@ ul {
   }
 }
 @media (max-width: 767px) {
-  .hero .hero__hello {
+  .hero__hello {
     top: 35vh;
   }
-  .hero .hero__hello h1 {
+  .hero__hello h1 {
     font-size: 80px;
   }
-  .hero .hero__hello h2 {
+  .hero__hello h2 {
     font-size: 32px;
     white-space: nowrap;
   }
-  .hero .hero__hello h3 {
+  .hero__hello h3 {
     display: none;
   }
-  .hero #left-padding,
-.hero #right-padding {
+
+  #left-page,
+#right-page {
     display: none;
   }
-  .hero .scroll i,
-.hero .scroll span {
+
+  .scroll i,
+.scroll span {
     -webkit-animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
             animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
   }
+
   @-webkit-keyframes scroll_move {
     0% {
       top: 90vh;
@@ -2145,6 +2138,7 @@ ul {
       top: 92vh;
     }
   }
+
   @keyframes scroll_move {
     0% {
       top: 90vh;
@@ -2154,7 +2148,6 @@ ul {
     }
   }
 }
-
 /*-------------------------*/
 /** $Skill
 ---------------------*/
