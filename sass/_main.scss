@@ -19,7 +19,7 @@
 /** $Header
 ---------------------------*/
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -29,35 +29,34 @@
 /* navbar */
 .navbar {
   display: flex;
-  /* border: 1px solid #000; */
-  margin: 0 12px;
+  // border: 1px solid #000;
+  margin: 0 20px;
   justify-content: space-between;
   align-items: center;
 
   @include pad {
     margin: 0 0px;
   }
+}
+.nav__my-logo {
+  margin: 0;
+  padding: 30px 0px 18px 24px;
 
-  .navbar__my-logo {
-    margin: 0;
-    padding: 30px 0px 18px 24px;
+  .icon-btn {
+    /* border: 1px solid #000; */
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+    font-size: 35px;
+    color: $word;
 
-    .icon-btn {
-      /* border: 1px solid #000; */
-      display: block;
-      width: 50px;
-      height: 50px;
-      line-height: 48px;
-      font-size: 35px;
-      color: $word;
+    &:hover {
+      color: $white;
+    }
 
-      &:hover {
-        color: $white;
-      }
-
-      @include pad {
-        font-size: 28px;
-      }
+    @include pad {
+      font-size: 28px;
     }
   }
 }
@@ -84,17 +83,15 @@
     }
 
     input {
-      display: none;
+      position: absolute;
+      opacity: 0;
       @include pad {
-        position: absolute;
         width: 40px;
         height: 40px;
         top: -7px;
         left: -15px;
 
         cursor: pointer;
-        opacity: 0; /* hide this */
-        z-index: 20; /* and place it over the hamburger */
         -webkit-touch-callout: none;
 
         &:checked ~ span {
@@ -200,7 +197,6 @@
     }
   }
 }
-
 /*-------------------------*/
 /** $About
 ---------------------------*/
@@ -216,11 +212,162 @@
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+/* hero__hello*/
+.hero__hello {
+  position: absolute;
+  margin: auto;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
 
-  .padding i {
-    font-size: 45px;
-    color: $dark-grey;
+  h1 {
+    font-size: 160px;
   }
+  h2 {
+    font-size: 42px;
+    color: #fff;
+    margin-top: -15px;
+  }
+  h3 {
+    margin-bottom: 16px;
+    color: #5f666d;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 400;
+    width: 38ch;
+    line-height: 50px;
+    border-right: 3px solid;
+    overflow: hidden;
+    animation: typing 3s steps(22), blink 0.5s step-end infinite;
+    white-space: nowrap;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+}
+/* hero__left Right*/
+.icon {
+  position: absolute;
+  top: 50vh;
+  z-index: 1000;
+  transform: translateY(-50%);
+
+  font-size: 45px;
+  color: $dark-grey;
+}
+@mixin icon-hover {
+  @content;
+  font-size: 50px;
+  color: #f8f9fa;
+  transition: all 0.2s ease;
+}
+.page {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  -webkit-font-smoothing: antialiased;
+  /* transform-origin: 0% 0%; */
+  transition: transform 1s ease-in-out;
+}
+.hero__left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $primary;
+  width: 50%;
+  height: 100%;
+
+  .left-icon {
+    left: 40px;
+    animation: moveLeft 1s 3.5s infinite alternate;
+
+    &:hover {
+      @include icon-hover;
+    }
+  }
+  @keyframes moveLeft {
+    0% {
+      left: 40px;
+    }
+    100% {
+      left: 20px;
+    }
+  }
+  .left-designer {
+    display: block;
+    top: 0;
+    left: 0;
+    background-image: url(../images/about__design.png);
+    transform: translateX(-100%);
+
+    h1 {
+      position: absolute;
+      font-size: 120px;
+      top: 40px;
+      right: 8%;
+    }
+    h2 {
+      position: absolute;
+      color: $white;
+      font-size: 40px;
+      font-weight: 600;
+      top: 70%;
+      right: 8%;
+    }
+    h3 {
+      position: absolute;
+      color: lighten($dark-grey, 10%);
+      font-size: 25px;
+      line-height: 40px;
+      text-align: right;
+      top: 82%;
+      right: 8%;
+    }
+    h4 {
+      position: absolute;
+      color: $white;
+      font-size: 20px;
+      top: 120px;
+      right: 5%;
+      writing-mode: vertical-rl;
+      text-orientation: sideways;
+      transform: rotate(-180deg);
+      letter-spacing: 2px;
+    }
+  }
+  .designer-whiteBlock {
+    position: absolute;
+    width: 800px;
+    height: 100px;
+    top: 140px;
+    right: 8%;
+    background-color: $white;
+  }
+}
+.hero__right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $secondary;
+  width: 50%;
+  height: 100%;
+
   .scroll {
     i {
       position: absolute;
@@ -243,298 +390,137 @@
     }
   }
 
-  /* hero__hello*/
-  .hero__hello {
-    position: absolute;
-    margin: auto;
-    top: 25vh;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    text-align: center;
+  .right-icon {
+    right: 50px;
+    animation: moveRight 1s 3.5s infinite alternate;
 
-    h1 {
-      font-size: 160px;
-    }
-    h2 {
-      font-size: 42px;
-      color: #fff;
-      margin-top: -15px;
-    }
-    h3 {
-      margin-bottom: 16px;
-      color: #5f666d;
-      font-family: monospace;
-      font-size: 30px;
-      font-weight: 400;
-      width: 38ch;
-      line-height: 50px;
-      border-right: 3px solid;
-      overflow: hidden;
-      animation: typing 3s steps(22), blink 0.5s step-end infinite;
-      white-space: nowrap;
-    }
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
+    &:hover {
+      @include icon-hover;
     }
   }
-  /* hero__left Right*/
-  @mixin icon {
-    position: absolute;
-    top: 50vh;
-    z-index: 1000;
-    transform: translateY(-50%);
-  }
-  @mixin icon-hover {
-    font-size: 50px;
-    color: #f8f9fa;
-    transition: all 0.2s ease;
-  }
-  @mixin page {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    -webkit-font-smoothing: antialiased;
-    /* transform-origin: 0% 0%; */
-    transition: transform 1s ease-in-out;
-  }
-  .hero__left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: $primary;
-    width: 50%;
-    height: 100%;
-
-    .left-icon {
-      @include icon;
-      left: 40px;
-      animation: moveLeft 1s 3.5s infinite alternate;
-
-      &:hover {
-        @include icon-hover;
-      }
+  @keyframes moveRight {
+    0% {
+      right: 50px;
     }
-    @keyframes moveLeft {
-      0% {
-        left: 40px;
-      }
-      100% {
-        left: 20px;
-      }
-    }
-    .left-designer {
-      @include page;
-      display: block;
-      top: 0;
-      left: 0;
-      background-image: url(../images/about__design.png);
-      transform: translateX(-100%);
-
-      .designer-whiteBlock {
-        position: absolute;
-        width: 800px;
-        height: 100px;
-        top: 140px;
-        right: 8%;
-        background-color: $white;
-      }
-      h1 {
-        position: absolute;
-        font-size: 120px;
-        top: 40px;
-        right: 8%;
-      }
-      h2 {
-        position: absolute;
-        color: $white;
-        font-size: 40px;
-        font-weight: 600;
-        top: 70%;
-        right: 8%;
-      }
-      h3 {
-        position: absolute;
-        color: lighten($dark-grey, 10%);
-        font-size: 25px;
-        line-height: 40px;
-        text-align: right;
-        top: 82%;
-        right: 8%;
-      }
-      h4 {
-        position: absolute;
-        color: $white;
-        font-size: 20px;
-        top: 120px;
-        right: 5%;
-        writing-mode: vertical-rl;
-        text-orientation: sideways;
-        transform: rotate(-180deg);
-        letter-spacing: 2px;
-      }
+    100% {
+      right: 30px;
     }
   }
-  .hero__right {
-    position: absolute;
+  .right-coder {
+    display: block;
+    background-image: url(../images/about__code.png);
+    background-position: bottom;
     top: 0;
     right: 0;
-    background-color: $secondary;
-    width: 50%;
-    height: 100%;
+    transform: translateX(100%);
 
-    .right-icon {
-      @include icon;
-      right: 50px;
-      animation: moveRight 1s 3.5s infinite alternate;
-
-      &:hover {
-        @include icon-hover;
-      }
-    }
-    @keyframes moveRight {
-      0% {
-        right: 50px;
-      }
-      100% {
-        right: 25px;
-      }
-    }
-    .right-coder {
-      @include page;
-      display: block;
-      background-image: url(../images/about__code.png);
-      background-position: bottom;
-      top: 0;
-      right: 0;
-      transform: translateX(100%);
-
-      h1 {
-        position: absolute;
-        font-size: 160px;
-        top: 35vh;
-        left: 5%;
-      }
-      h2 {
-        position: absolute;
-        font-size: 30px;
-        color: lighten($dark-grey, 5%);
-        top: 3%;
-        left: 5.5%;
-      }
-    }
-  }
-
-  @mixin padding-id {
-    display: block;
-    position: relative;
-    z-index: 100;
-    cursor: pointer;
-  }
-  #left-padding {
-    @include padding-id;
-    input {
-      opacity: 0;
-      -webkit-touch-callout: none;
-
-      &:checked ~ i {
-        color: #f8f9fa;
-      }
-      &:checked ~ .left-designer {
-        transform: none;
-      }
-    }
-  }
-  #right-padding {
-    @include padding-id;
-    input {
-      opacity: 0;
-      -webkit-touch-callout: none;
-
-      &:checked ~ .right-coder {
-        transform: none;
-      }
-    }
-  }
-
-  @include laptop {
-    .hero__hello {
-      top: 32vh;
-
-      h1 {
-        font-size: 150px;
-      }
-      h3 {
-        font-size: 42px;
-        white-space: nowrap;
-      }
-    }
-
-    #left-padding,
-    #right-padding {
-      display: none;
-    }
-    .scroll i,
-    .scroll span {
-      animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
-    }
-    @keyframes scroll_move {
-      0% {
-        top: 90vh;
-      }
-      100% {
-        top: 92vh;
-      }
-    }
-  }
-  @include pad {
-    .hero__hello {
+    h1 {
+      position: absolute;
+      font-size: 160px;
       top: 35vh;
-
-      h1 {
-        font-size: 80px;
-      }
-      h2 {
-        font-size: 32px;
-        white-space: nowrap;
-      }
-      h3 {
-        display: none;
-      }
+      left: 5%;
     }
-    #left-padding,
-    #right-padding {
-      display: none;
-    }
-
-    .scroll i,
-    .scroll span {
-      animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
-    }
-    @keyframes scroll_move {
-      0% {
-        top: 90vh;
-      }
-      100% {
-        top: 92vh;
-      }
+    h2 {
+      position: absolute;
+      font-size: 30px;
+      color: lighten($dark-grey, 5%);
+      top: 3%;
+      left: 5.5%;
     }
   }
 }
+.page-id {
+  display: block;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+#left-page {
+  input {
+    opacity: 0;
+    -webkit-touch-callout: none;
 
+    &:checked ~ i {
+      color: #f8f9fa;
+    }
+    &:checked ~ .left-designer {
+      transform: none;
+    }
+  }
+}
+#right-page {
+  input {
+    opacity: 0;
+    -webkit-touch-callout: none;
+
+    &:checked ~ .right-coder {
+      transform: none;
+    }
+  }
+}
+@include laptop {
+  .hero__hello {
+    top: 32vh;
+
+    h1 {
+      font-size: 150px;
+    }
+    h3 {
+      font-size: 42px;
+      white-space: nowrap;
+    }
+  }
+
+  #left-page,
+  #right-page {
+    display: none;
+  }
+  .scroll i,
+  .scroll span {
+    animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
+  }
+  @keyframes scroll_move {
+    0% {
+      top: 90vh;
+    }
+    100% {
+      top: 92vh;
+    }
+  }
+}
+@include pad {
+  .hero__hello {
+    top: 35vh;
+
+    h1 {
+      font-size: 80px;
+    }
+    h2 {
+      font-size: 32px;
+      white-space: nowrap;
+    }
+    h3 {
+      display: none;
+    }
+  }
+  #left-page,
+  #right-page {
+    display: none;
+  }
+
+  .scroll i,
+  .scroll span {
+    animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
+  }
+  @keyframes scroll_move {
+    0% {
+      top: 90vh;
+    }
+    100% {
+      top: 92vh;
+    }
+  }
+}
 /*-------------------------*/
 /** $Skill
 ---------------------*/
