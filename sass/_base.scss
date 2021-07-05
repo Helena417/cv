@@ -33,6 +33,27 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+/* width */
+::-webkit-scrollbar-track-piece {
+  overflow: hidden !important;
+  background: #cbcbcb;
+}
+
+::-webkit-scrollbar {
+  position: fixed;
+  width: 8px;
+  overflow: auto;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 28%, 40%);
+  border-radius: 10px;
+  outline-offset: -2px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 28%, 30%);
+}
 
 img {
   max-width: 100%;
