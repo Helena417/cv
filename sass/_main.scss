@@ -19,7 +19,7 @@
 /** $Header
 ---------------------------*/
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -40,7 +40,7 @@
 }
 .nav__my-logo {
   margin: 0;
-  padding: 30px 0px 18px 24px;
+  padding: 20px 0px 18px 24px;
 
   .icon-btn {
     /* border: 1px solid #000; */
@@ -48,11 +48,11 @@
     width: 50px;
     height: 50px;
     line-height: 48px;
-    font-size: 35px;
+    font-size: 30px;
     color: $word;
 
     &:hover {
-      color: $white;
+      color: $dark-grey;
     }
 
     @include pad {
@@ -145,18 +145,35 @@
     .menu__item {
       display: flex;
       justify-content: space-evenly;
-      padding-right: 12px;
+      padding-right: px;
 
       a {
         display: block;
         padding: 12px 12px;
         color: #456e84;
         font-family: 'Quantico', 'Noto Sans TC';
-        font-size: 20px;
+        font-size: 18px;
 
-        &:hover {
-          color: #f8f9fa;
-          transition: all 0.4s ease;
+        &::before {
+          transform: scaleX(0);
+          transform-origin: bottom right;
+        }
+
+        &:hover::before {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+
+        &::before {
+          content: ' ';
+          display: block;
+          position: absolute;
+          height: 18px;
+          margin-top: 13px;
+          inset: 0 0 0 0;
+          background: rgba(134, 233, 240, 0.9);
+          z-index: -1;
+          transition: transform 0.3s ease;
         }
       }
 
@@ -165,10 +182,10 @@
         flex: 1;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 80px 60px;
+        padding: 80px 65px;
 
         a:hover {
-          color: #71d0d6;
+          color: $dark-grey;
         }
       }
     }
@@ -198,44 +215,73 @@
   }
 }
 /*-------------------------*/
-/** $About
+/** $Home
 ---------------------------*/
-.hero {
-  /* border: 1px solid #000; */
+@mixin contain {
+  @content;
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-
   -webkit-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
   user-select: none;
 }
+.hero {
+  /* border: 1px solid #000; */
+  @include contain;
+
+  .scroll-icon {
+    position: relative;
+    text-align: center;
+    opacity: 0.3;
+    top: 92vh;
+    animation: breath 2s 3s infinite;
+    @keyframes breath {
+      0% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0.3;
+      }
+    }
+    i {
+      position: absolute;
+      font-size: 45px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg);
+      color: lighten($dark-grey, 10%);
+    }
+  }
+}
 /* hero__hello*/
 .hero__hello {
   position: absolute;
   margin: auto;
-  top: 25vh;
+  top: 23vh;
   left: 50%;
+  z-index: 5;
   transform: translateX(-50%);
-  z-index: 10;
   text-align: center;
 
   h1 {
-    font-size: 160px;
+    font-size: 130px;
   }
   h2 {
-    font-size: 42px;
+    font-size: 38px;
     color: #fff;
     margin-top: -15px;
   }
   h3 {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
     color: #5f666d;
     font-family: monospace;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 400;
     width: 38ch;
     line-height: 50px;
@@ -309,6 +355,7 @@
       left: 20px;
     }
   }
+
   .left-designer {
     display: block;
     top: 0;
@@ -318,7 +365,7 @@
 
     h1 {
       position: absolute;
-      font-size: 120px;
+      font-size: 110px;
       top: 40px;
       right: 8%;
     }
@@ -327,7 +374,7 @@
       color: $white;
       font-size: 40px;
       font-weight: 600;
-      top: 70%;
+      top: 68%;
       right: 8%;
     }
     h3 {
@@ -336,14 +383,14 @@
       font-size: 25px;
       line-height: 40px;
       text-align: right;
-      top: 82%;
+      top: 78%;
       right: 8%;
     }
     h4 {
       position: absolute;
       color: $white;
       font-size: 20px;
-      top: 120px;
+      top: 108px;
       right: 5%;
       writing-mode: vertical-rl;
       text-orientation: sideways;
@@ -354,8 +401,8 @@
   .designer-whiteBlock {
     position: absolute;
     width: 800px;
-    height: 100px;
-    top: 140px;
+    height: 90px;
+    top: 130px;
     right: 8%;
     background-color: $white;
   }
@@ -368,28 +415,6 @@
   width: 50%;
   height: 100%;
 
-  .scroll {
-    i {
-      position: absolute;
-      font-size: 40px;
-      top: 90vh;
-      left: -40px;
-      transform: rotate(90deg);
-      color: lighten($dark-grey, 10%);
-    }
-    span {
-      position: absolute;
-      top: 90vh;
-      left: 10px;
-      font-size: 14px;
-      font-family: Geneva, Tahoma, sans-serif;
-      writing-mode: vertical-rl;
-      text-orientation: sideways;
-      transform: rotate(-180deg);
-      color: lighten($dark-grey, 10%);
-    }
-  }
-
   .right-icon {
     right: 50px;
     animation: moveRight 1s 3.5s infinite alternate;
@@ -400,10 +425,10 @@
   }
   @keyframes moveRight {
     0% {
-      right: 50px;
+      right: 40px;
     }
     100% {
-      right: 30px;
+      right: 20px;
     }
   }
   .right-coder {
@@ -416,7 +441,7 @@
 
     h1 {
       position: absolute;
-      font-size: 160px;
+      font-size: 130px;
       top: 35vh;
       left: 5%;
     }
@@ -490,7 +515,7 @@
 }
 @include pad {
   .hero__hello {
-    top: 35vh;
+    top: 38vh;
 
     h1 {
       font-size: 80px;
@@ -510,7 +535,7 @@
 
   .scroll i,
   .scroll span {
-    animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
+    animation: scroll_move 1s 1s ease-in-out infinite alternate;
   }
   @keyframes scroll_move {
     0% {
@@ -522,15 +547,209 @@
   }
 }
 /*-------------------------*/
-/** $Skill
+/** $about
 ---------------------*/
-.skill {
-  position: absolute;
+.about {
+  @include contain;
+
+  .bgL {
+    position: absolute;
+    background-color: $primary;
+    width: 50%;
+    height: 100vh;
+    animation: bgL 0.5s ease-in-out forwards;
+  }
+  @keyframes bgL {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(0 0, 100% 0, 0% 100%, 0% 100%);
+    }
+  }
+  .bgL2 {
+    animation: bgL2 0.5s ease-in-out backwards;
+  }
+  @keyframes bgL2 {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 0% 100%, 0% 100%);
+    }
+
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+  .bgR {
+    position: absolute;
+    background-color: $secondary;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    animation: bgR 0.5s ease-in-out forwards;
+  }
+  @keyframes bgR {
+    0% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    100% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+  .bgR2 {
+    animation: bgR2 0.5s ease-in-out backwards;
+  }
+  @keyframes bgR2 {
+    0% {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+  }
+  .photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 55%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    background-size: 450px;
+    background-image: url('../images/Han.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    animation: photoShow 1s 0.5s linear backwards;
+  }
+  @keyframes photoShow {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .about__group {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+
+    .sub1 {
+      display: block;
+      top: 0;
+      left: 0;
+      margin-bottom: 20px;
+    }
+
+    .my-name {
+      font-family: '微軟正黑體';
+      color: $word;
+      margin-top: 50px;
+
+      p {
+        display: inline;
+        font-size: 20px;
+      }
+    }
+    .bio {
+      display: block;
+      margin: 0px;
+      width: 450px;
+      font-size: 18px;
+    }
+
+    .personal {
+      margin-top: 20px;
+
+      font-size: 16px;
+      font-family: $font-noto;
+
+      a {
+        margin-top: 5px;
+        display: block;
+      }
+
+      .personal__icon {
+        font-size: 22px;
+        color: $primary;
+      }
+    }
+  }
+  .quote {
+    position: absolute;
+    right: 3%;
+    display: inline-block;
+    width: 60px;
+    top: 75vh;
+    opacity: 0.2;
+  }
+  .intro {
+    position: absolute;
+    right: 3%;
+    top: 85vh;
+    font-size: 28px;
+    width: 450px;
+    color: lighten($white, 20%);
+    text-align: right;
+  }
 }
 
 /*-------------------------*/
+/** $Skill
+---------------------*/
+.skill {
+  @include contain;
+
+  .skill-bg {
+    position: absolute;
+    background-color: $secondary;
+    width: 100%;
+    height: 100vh;
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0% 100%);
+  }
+}
+.sub-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 120px;
+}
+/*-------------------------*/
 /** $Experience
 ---------------------*/
+.exp {
+  @include contain;
+  border: 1px solid #000;
+
+  .exp-bg {
+    .exp__word {
+      position: absolute;
+      left: 30%;
+      top: 65vh;
+      transform: translateX(-50%);
+      font-family: '微軟正黑體';
+
+      .sub-title {
+        font-size: 30px;
+        margin-top: 40px;
+        margin-bottom: 0px;
+        color: #4a90e2;
+      }
+      .education {
+        display: block;
+        margin-top: 8px;
+        margin-bottom: -5px;
+        font-size: 20px;
+      }
+      .en {
+        display: block;
+        margin: 0;
+        color: lighten($dark-grey, 40%);
+      }
+    }
+  }
+}
 
 /*-------------------------*/
 /** $Work
