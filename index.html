@@ -100,11 +100,11 @@
         </div>
         <div class="js-AnimationR bgR bgR2"></div>
           <div class="about__group">
-             <h2 class="sub1">About me</h2>
+            <h2 class="sub1">About me</h2>
 
             <h3 class="my-name">陳<br>筠涵 <p >Chen Yun-Han</p></h3>
             <p class="bio">我是一名前端工程師，喜歡嘗試與挑戰，擁有跨領域的知識與技能，以工程師的邏輯思維來解決問題，以設計師的創新思考來靈活變通，並注重UI/UX，讓自己在團隊中能達到有效的溝通。</p>
-            <span class="personal">
+            <div class="personal">
               <a href="mailto:susan2017966@gmail.com" class="mail">
                 <i class="uil uil-envelope personal__icon"></i>
                 <span>susan2017966@gmail.com</span>
@@ -113,8 +113,7 @@
                 <i class="uil uil-github-alt personal__icon"></i>
                 <span>Helena417</span>  
               </a>
-
-            </span>
+            </div>
           </div> 
           <img class="quote" src="https://img.icons8.com/material-sharp/96/000000/quote-right.png"/>
           <p class="intro">人生就是要不停的開創與挑戰！</p>
@@ -124,32 +123,37 @@
 
       <!-- Start skill -->
       <div class="skill" id="skill">
+        <div class="skill-bg-white"></div>
         <div class="skill-bg">
           <h2 class="sub-center">Skill</h2>
-        </div>
-
-
-        <div class="containter">
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="card-icon"></div>
-              <div class="card-txt">
-                <h3 class="txt-sub"></h3>
-                <p class="txt-word">  </p>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="card-icon">
+                  <img class="img" src="./images/card_icon_01.png">
+                </div>
+                <div class="card-txt">
+                  <h3 class="txt-sub">Web Development</h3>
+                  <p class="txt-word">Html / Css / JavaScript /<br> Bootstrap / Sass / RWD /<br> jQuery / Ajax (axios) /<br> React (learing)</p>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card-icon"></div>
-              <div class="card-txt">
-                <h3 class="txt-sub"></h3>
-                <p class="txt-word">  </p>
+              <div class="col-lg-3">
+                <div class="card-icon">
+                  <img class="img" src="./images/card_icon_02.png">
+                </div>
+                <div class="card-txt">
+                  <h3 class="txt-sub">Tools</h3>
+                  <p class="txt-word">Git / Github / Postman /<br> Wireshark / phpMyAdmin /<br> webpack / Adobe XD /<br> Photoshop / Illustrator</p>
+                </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="card-icon"></div>
-              <div class="card-txt">
-                <h3 class="txt-sub"></h3>
-                <p class="txt-word">  </p>
+              <div class="col-lg-3">
+                <div class="card-icon">
+                  <img class="img" src="./images/card_icon_03.png">
+                </div>
+                <div class="card-txt">
+                  <h3 class="txt-sub">Other</h3>
+                  <p class="txt-word">UI / UX /<br> Product development /<br> 3D models bulding</p>
+                </div>
               </div>
             </div>
           </div>
@@ -159,16 +163,108 @@
       
       <!-- Start Experience -->
       <div class="exp" id="exp">
-        <div class="exp-bg">
+        <div class="container">
           <h2 class="sub-center">Experience</h2>
-          <div class="exp__word">
-            <h3 class="sub-title">學歷</h3>
-            <p class="education">國立成功大學工業設計所 互動設計組 碩士畢業 (2018.9-2021.2)</p><p class="en">National Cheng Kung University, Industrial
-              Design(Master degree) </p><p class="education">國立台中教育大學資訊工程學系 學士畢業 (2013-2017)</p><p class="en">National Taichung University of Education, Computer Science(Bachelor degree) </p>
+          <div class="flex">
+            <ul class="exp-list">
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot">
+                  <div class="dot-color dot-yellow left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2018 - 2021.2</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">國立成功大學工業設計所 互動設計組 / 碩士畢業</h4> 
+                  <p>論文：Projection Based Interactive System to Promote Social Sharing on Painting Activities for Elderly<br>
+                  使用Unity+OpenCV 以C語言開發互動裝置應用。</p> 
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot ">
+                  <div class="dot-color left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2019.5 - 10</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">2019成大創新圓夢計畫</h4> 
+                  <p>此項目獲得8萬元補助，在專案中擔任團隊負責人，負責專案控管，並參與產品開發、製作及介面設計。</p> 
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot ">
+                  <div class="dot-color left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2018.11 - 12</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">第十二屆晟銘盃應用設計大賽 / 決賽入圍</h4> 
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot">
+                  <div class="dot-color dot-yellow left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2013 - 2017</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">國立臺中教育大學資訊工程學系 / 學士畢業</h4> 
+                  <p>畢業專題製作獲得第三名及系統展示優良作品獎，個人獲選美育獎，隔年以正取三成績進入成大工設所攻讀跨領域碩士學位。
+                  </p> 
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot">
+                  <div class="dot-color left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2017.7 - 9</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">臺中教育大學教專實習網 / 網頁設計、平面設計
+                  </h4>              
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot">
+                  <div class="dot-color left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2016.7 - 11</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">2016 MorSensor無線感測積木創意應用設計競賽 / 銅牌
+                  </h4>              
+                </div>
+              </li>
+              <li class="grid group">
+                <div class="list-line"></div>
+                <div class="dot">
+                  <div class="dot-color left-0 top-0"></div> 
+                  <div class="dot-hover group-animate left-0 top-0"></div>
+                </div> 
+                <p class="time">2016</p> 
+                <div class="exp-detail flex">
+                  <h4 class="detail-sub">TCGA 2016 電腦對局研討會 / 網頁開發
+                  </h4>
+                  <p>負責研討會的報名網頁開發及海報設計、協助論文集編輯
+                  </p>               
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
       <!-- END Experience -->
+
+
+      <!-- Start Work -->
+      <div class="work">
+      </div>
+      <!-- END Work -->
 
 
 

@@ -631,9 +631,9 @@
 
   .about__group {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translatex(-50%);
 
     .sub1 {
       display: block;
@@ -660,7 +660,7 @@
     }
 
     .personal {
-      margin-top: 20px;
+      margin-top: 40px;
 
       font-size: 16px;
       font-family: $font-noto;
@@ -699,61 +699,199 @@
 /** $Skill
 ---------------------*/
 .skill {
-  @include contain;
-
-  .skill-bg {
+  .skill-bg-white {
     position: absolute;
-    background-color: $secondary;
-    width: 100%;
+    background-color: $white;
+    width: 50%;
     height: 100vh;
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0% 100%);
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 0% 100%, 0% 100%);
+  }
+  .skill-bg {
+    background-color: $secondary;
+    padding-top: 100px;
+    padding-bottom: 90px;
+  }
+
+  .row {
+    margin-top: 70px;
+    z-index: 2;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .card-icon {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+    z-index: 2;
+
+    .img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 60%;
+      max-height: 60%;
+    }
+  }
+  .card-txt {
+    height: auto;
+    min-height: 280px;
+    text-align: center;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
+    padding: 20px;
+    margin-bottom: 50px;
+
+    .txt-sub {
+      color: $dark-grey;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+    .txt-word {
+      font-family: $font-noto;
+      margin-bottom: 20px;
+    }
   }
 }
+@include pad {
+}
 .sub-center {
-  position: absolute;
+  display: block;
+  text-align: center;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 120px;
+  margin-top: 50px;
 }
 /*-------------------------*/
 /** $Experience
 ---------------------*/
 .exp {
-  @include contain;
   border: 1px solid #000;
+  background-color: $secondary;
+  padding-top: 80px;
+  padding-bottom: 150px;
 
-  .exp-bg {
-    .exp__word {
+  .exp-list {
+    position: relative;
+    margin-top: 50px;
+  }
+  .list-line {
+    position: absolute;
+    grid-column-start: 2;
+    width: 2px;
+    height: 100%;
+    background-color: $white;
+    top: 0;
+    left: 15px;
+    transform: translateX(-50%);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-bottom: 30px;
+  }
+  .dot {
+    grid-row-start: 1;
+    grid-column-start: 2;
+
+    .dot-color {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border: 6px solid;
+      border-radius: 50%;
+      z-index: 5;
+      --tw-bg-opacity: 1;
+      border-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+      --tw-border-opacity: 1;
+      background-color: rgba(113, 208, 214, var(--tw-border-opacity));
+    }
+    .dot-yellow {
+      --tw-border-opacity: 1;
+      background-color: rgba(255, 204, 82, var(--tw-border-opacity));
+    }
+  }
+
+  .group:hover {
+    .dot-hover {
       position: absolute;
-      left: 30%;
-      top: 65vh;
-      transform: translateX(-50%);
-      font-family: '微軟正黑體';
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, var(--tw-border-opacity));
+      --tw-border-opacity: 1;
+    }
+    .group-animate {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 
-      .sub-title {
-        font-size: 30px;
-        margin-top: 40px;
-        margin-bottom: 0px;
-        color: #4a90e2;
-      }
-      .education {
-        display: block;
-        margin-top: 8px;
-        margin-bottom: -5px;
-        font-size: 20px;
-      }
-      .en {
-        display: block;
-        margin: 0;
-        color: lighten($dark-grey, 40%);
+      @keyframes ping {
+        75%,
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
       }
     }
   }
-}
+  .time {
+    margin: 0;
+    grid-column-start: 3;
+  }
+  .exp-detail {
+    flex-direction: column;
+    grid-column-start: 5;
+    grid-column-end: 13;
 
+    .detail-sub {
+      margin: 0;
+      font-family: '微軟正黑體';
+      font-weight: 600;
+    }
+    p {
+      margin: 0;
+      line-height: 25px;
+      font-weight: 500;
+      font-size: 16px;
+      font-family: '微軟正黑體';
+    }
+  }
+
+  .exp__word {
+    // position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateX(-50%);
+    font-family: '微軟正黑體';
+
+    .education {
+      display: block;
+      margin-top: 8px;
+      margin-bottom: -5px;
+      font-size: 20px;
+    }
+    .en {
+      display: block;
+      margin: 0;
+      color: lighten($dark-grey, 40%);
+    }
+  }
+}
 /*-------------------------*/
 /** $Work
 ---------------------*/
+.work {
+  background-color: $white;
+}
 
 /*-------------------------*/
 /** $Contact
