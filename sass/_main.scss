@@ -442,7 +442,7 @@
     h1 {
       position: absolute;
       font-size: 130px;
-      top: 35vh;
+      top: 40vh;
       left: 5%;
     }
     h2 {
@@ -451,6 +451,15 @@
       color: lighten($dark-grey, 5%);
       top: 3%;
       left: 5.5%;
+    }
+    h3 {
+      position: absolute;
+      font-size: 25px;
+      font-weight: 600;
+      color: $word;
+      top: 12%;
+      left: 5.5%;
+      line-height: 40px;
     }
   }
 }
@@ -661,7 +670,6 @@
 
     .personal {
       margin-top: 40px;
-
       font-size: 16px;
       font-family: $font-noto;
 
@@ -681,8 +689,13 @@
     right: 3%;
     display: inline-block;
     width: 60px;
+    height: 60px;
     top: 75vh;
     opacity: 0.2;
+    z-index: 10;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../images/quote.png');
   }
   .intro {
     position: absolute;
@@ -692,6 +705,38 @@
     width: 450px;
     color: lighten($white, 20%);
     text-align: right;
+  }
+
+  @include pad {
+    .photo {
+      background-size: 200px;
+      height: 250px;
+      background-position: top;
+      left: 45%;
+      bottom: 50%;
+    }
+    .about__group {
+      .sub1 {
+        margin: -50px 0 0 0;
+        text-align: center;
+      }
+
+      .my-name {
+        margin-top: 150px;
+        margin-left: 35%;
+      }
+      .bio,
+      .personal {
+        padding: 10px 60px 0 60px;
+
+        a {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .md-hidden {
+      display: none;
+    }
   }
 }
 
@@ -771,15 +816,21 @@
   left: 50%;
   transform: translateX(-50%);
   margin-top: 50px;
+  z-index: 2;
+}
+@include pad {
+  .txt-word {
+    font-size: 18px;
+  }
 }
 /*-------------------------*/
 /** $Experience
 ---------------------*/
 .exp {
-  border: 1px solid #000;
+  // border: 1px solid #000;
   background-color: $secondary;
   padding-top: 80px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 
   .exp-list {
     position: relative;
@@ -886,21 +937,239 @@
     }
   }
 }
+@include pad {
+  .exp-list {
+    margin: 0 25px 0 -10px;
+  }
+}
 /*-------------------------*/
 /** $Work
 ---------------------*/
 .work {
   background-color: $white;
-}
+  padding-top: 100px;
 
+  .row {
+    justify-content: center;
+  }
+  .work-list {
+    margin-top: 80px;
+  }
+
+  .work-text {
+    text-align: left;
+    margin: 40px 10px 0 40px;
+
+    .work-text__title {
+      z-index: 1;
+      font-size: 30px;
+      color: $word;
+    }
+    .work-text__intro {
+      font-size: 16px;
+    }
+  }
+
+  .imgbox {
+    width: 100%;
+
+    .imgbox__inner {
+      padding-top: calc(100% * 3 / 4);
+    }
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-image: url('../images/project_01.png');
+    }
+  }
+  .work-btn {
+    left: 50%;
+    transform: translateX(-50%);
+    color: $primary;
+    height: 48px;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 24px;
+    padding: 0 64px;
+    margin-top: 100px;
+    font-family: 'Raleway', 'Helvetica', 'roboto', arial, sans-serif;
+    cursor: pointer;
+    background-color: inherit;
+    border: 3px solid $primary;
+  }
+  .work-btn:hover {
+    background-color: $primary;
+    color: #fefefe;
+  }
+}
+@include pad {
+  .work {
+    .imgbox {
+      .image {
+        width: 90%;
+        height: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .work-text__title {
+      margin-top: -50px;
+      margin-bottom: -10px;
+    }
+    .work-btn {
+      margin-top: 50px;
+      z-index: 2;
+    }
+  }
+  .p-md {
+    padding-right: 20px;
+  }
+}
 /*-------------------------*/
 /** $Contact
 ---------------------*/
+.contact {
+  padding-top: 150px;
+  height: 1300px;
 
+  .contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(60deg, $primary, $secondary);
+    opacity: 1;
+  }
+  .contact-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/bg.png);
+    opacity: 0.03;
+  }
+  .form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+
+    label {
+      margin-bottom: 12px;
+      display: inline-block;
+      vertical-align: middle;
+      color: $white;
+      font-size: 20px;
+    }
+
+    input,
+    textarea {
+      padding: 8px 16px;
+      display: inline-block;
+      border: 1.5px solid $white;
+      border-radius: 5px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 20px;
+      background-color: hsl(250, 250, 250, 20%);
+      color: $dark-grey;
+    }
+    .contact-btn {
+      margin-top: 40px;
+      padding: 0 200px;
+    }
+    .btn-submit {
+      // left: 50%;
+      // transform: translateX(-50%);
+      color: $white;
+      height: 48px;
+      font-size: 20px;
+      font-weight: 600;
+      border-radius: 24px;
+      font-family: 'Raleway', 'Helvetica', 'roboto', arial, sans-serif;
+      cursor: pointer;
+      background-color: hsl(250, 250, 250, 30%);
+      border: 1px solid $white;
+    }
+    .btn-submit:hover {
+      background-color: $primary;
+      color: $dark-grey;
+    }
+  }
+  .contact-txt {
+    margin-top: 50px;
+    font-size: 25px;
+    color: $dark-grey;
+    text-align: center;
+  }
+  .info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 23px;
+
+    a {
+      color: $word;
+      display: block;
+      margin-top: 30px;
+    }
+  }
+}
+.lean-bg {
+  position: relative;
+  margin-top: -50px;
+  width: 100%;
+  height: 180px;
+  top: 0;
+  z-index: 1;
+  background-color: #fefefe;
+  transform: skewY(-5deg) translateY(50%);
+}
+@include pad {
+  .lean-bg {
+    height: 80px;
+  }
+  .form {
+    padding: 0 30px 0 30px;
+
+    .contact-btn {
+      padding: 0 !important;
+    }
+  }
+  .info {
+    font-size: 22px !important;
+
+    .info__social {
+      font-size: 40px !important;
+    }
+
+    .d-md-n {
+      display: none;
+    }
+  }
+}
 /*-------------------------*/
 /** $Footer
 ---------------------*/
-
+.footer {
+  position: relative;
+  margin-top: -80px;
+  bottom: 0;
+  text-align: center;
+  background-color: inherit;
+}
 /*-------------------------*/
 /** $Parallax graphic
 ---------------------*/

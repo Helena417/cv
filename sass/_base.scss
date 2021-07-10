@@ -174,3 +174,21 @@ ul {
 .top-0 {
   top: 0;
 }
+
+@media (max-width: 768px) {
+  .md-sub-f {
+    font-size: 35px;
+  }
+  .mt-md-0 {
+    margin-top: 0;
+  }
+  .pt-md-0 {
+    padding-top: 0;
+  }
+  .pb-md-4 {
+    padding-bottom: 40px;
+  }
+  .pl-md-2 {
+    padding-left: 2rem;
+  }
+}

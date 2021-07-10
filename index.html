@@ -41,7 +41,7 @@
                 <li><a class="item" tabindex="0" role="button" href="#skill"> Skill </a></li>
                 <li><a class="item" tabindex="0" role="button" href="#exp"> Experience </a>
                 </li>
-                <li><a class="item" tabindex="0" role="button" href="#works"> Works </a>
+                <li><a class="item" tabindex="0" role="button" href="#work"> Works </a>
                 </li>
                 <li><a class="item" tabindex="0" role="button" href="#contact"> Contact </a></li>
               </ul>
@@ -81,6 +81,8 @@
               <i id="right-btn" style="display:block" class="right-icon icon icon-right-open"></i>
               <div id="code-slide" class="right-coder page">
                 <h2>Developer Skills</h2>
+                <h3>Front-end  developer <br>
+                Interactive  developer</h3>
                 <h1>Hello</br>World</h1>
               </div>
             </label>
@@ -100,11 +102,11 @@
         </div>
         <div class="js-AnimationR bgR bgR2"></div>
           <div class="about__group">
-            <h2 class="sub1">About me</h2>
+            <h2 class="sub1 md-sub-f">About me</h2>
 
             <h3 class="my-name">陳<br>筠涵 <p >Chen Yun-Han</p></h3>
             <p class="bio">我是一名前端工程師，喜歡嘗試與挑戰，擁有跨領域的知識與技能，以工程師的邏輯思維來解決問題，以設計師的創新思考來靈活變通，並注重UI/UX，讓自己在團隊中能達到有效的溝通。</p>
-            <div class="personal">
+            <div class="personal mt-md-4 p-md">
               <a href="mailto:susan2017966@gmail.com" class="mail">
                 <i class="uil uil-envelope personal__icon"></i>
                 <span>susan2017966@gmail.com</span>
@@ -115,17 +117,16 @@
               </a>
             </div>
           </div> 
-          <img class="quote" src="https://img.icons8.com/material-sharp/96/000000/quote-right.png"/>
-          <p class="intro">人生就是要不停的開創與挑戰！</p>
+          <img class="quote md-hidden">
+          <p class="intro md-hidden">人生就是要不停的開創與挑戰！</p>
       </div>
       <!-- End About -->
-
 
       <!-- Start skill -->
       <div class="skill" id="skill">
         <div class="skill-bg-white"></div>
-        <div class="skill-bg">
-          <h2 class="sub-center">Skill</h2>
+        <div class="skill-bg pb-md-4">
+          <h2 class="sub-center md-sub-f mt-md-0">Skill</h2>
           <div class="container">
             <div class="row">
               <div class="col-lg-3">
@@ -162,9 +163,9 @@
       <!-- END  skill -->
       
       <!-- Start Experience -->
-      <div class="exp" id="exp">
+      <div class="exp pt-md-4 pb-md-4" id="exp">
         <div class="container">
-          <h2 class="sub-center">Experience</h2>
+          <h2 class="sub-center md-sub-f mt-0 mb-md-0">Experience</h2>
           <div class="flex">
             <ul class="exp-list">
               <li class="grid group">
@@ -186,9 +187,9 @@
                   <div class="dot-color left-0 top-0"></div> 
                   <div class="dot-hover group-animate left-0 top-0"></div>
                 </div> 
-                <p class="time">2019.5 - 10</p> 
+                <p class="time">2019.5 - 11</p> 
                 <div class="exp-detail flex">
-                  <h4 class="detail-sub">2019成大創新圓夢計畫</h4> 
+                  <h4 class="detail-sub">2019 成大創新圓夢計畫</h4> 
                   <p>此項目獲得8萬元補助，在專案中擔任團隊負責人，負責專案控管，並參與產品開發、製作及介面設計。</p> 
                 </div>
               </li>
@@ -260,21 +261,80 @@
       </div>
       <!-- END Experience -->
 
-
       <!-- Start Work -->
-      <div class="work">
+      <div class="work mt-md-0" id="work">
+        <div class="container">
+          <h2 class="sub-center mt-md-0 md-sub-f">My works</h2>
+          <div class="work-list">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="imgbox">
+                  <a href="../cv/images/project_01.png" data-fancybox="group">
+                    <div class="imgbox__inner">
+                      <div class="image">
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="work-text p-md">
+                  <h3 class="work-text__title">BodyGuard</h3>
+                  <p class="work-text__intro">2019 成大創新圓夢計畫之開發項目，為專業運動員所開發一款智慧衣，可感測身體運動軌跡，並由app進行記錄與分析，提供運動員數據輔助訓練。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="https://drive.google.com/file/d/1nbnN2Z6qrBonzBdvAW_dcngBP-1bdTH9/view?usp=sharing" target="blank"> <input type="button" class="work-btn" value="Other works"></input></a>
+          
+          
+        </div>
       </div>
       <!-- END Work -->
 
+      <!-- Start Contact -->
+      <div class="lean-bg"></div>
+      <div class="contact pt-md-5" id="contact">
+        <div class="contact-bg"></div>
+        <div class="container ">
+          <h2 class="sub-center md-sub-f">Contact</h2>
+          <form class="form " action="https://formspree.io/f/xgerlejd" method="post">
+						<label for="Contact-name">Name</label>
+						<input type="text" name="Contact-name">
+						<label for="Contact-mail">Email</label>
+						<input type="email" name="Contact-mail">	
+						<label for="msg">Message</label>
+						<textarea cols="30" rows="10" name="msg"></textarea>
+						<div class="contact-btn">
+							<input type="submit" class="btn-submit" value="Send">
+						</div>
+					</form>
+          <div class="contact-txt">or</div>
+          <div class="info mt-md-0">
+						<div class="info__mail">
+							<a href="mailTo:susan2017966@gmail.com">
+                <i class="uil uil-envelope d-md-n"></i>&ensp;susan2017966@gmail.com</a>
+						</div>
+						<div class="info__phone">
+							<a href="tel:0979229073">
+                <i class="uil uil-phone-alt d-md-n"></i>&ensp;0979229073</a>
+						</div>
+						<div class="info__social">
+							<a href="https://www.facebook.com/han417" class="icon-btn">
+								<i class="uil uil-facebook"></i>
+							</a>
+						</div>
+					</div>
+        </div>
+      </div>
 
-
-
+      <!-- END Contact -->
     </main>
     <!-- End main -->
 
     <!-- Start footer -->
     <footer class="footer">
-      <a href="https://icons8.com/icon/93341/get-quote">Get Quote icon by Icons8</a>
+      <p>© 2021 Yun Han Chen.</p>
     </footer>
     <!-- End footer -->
 
