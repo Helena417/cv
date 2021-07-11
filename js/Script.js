@@ -5,6 +5,20 @@ $(document).ready(function () {
     $('#menu-toggle input').click();
   });
 
+  // wow plugin
+  wow = new WOW(
+    {
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       0,          // default
+    mobile:       true,       // default
+    live:         true,       // default
+    scrollContainer: null // 可以設定成只套用在某個container中捲動才呈現, 不設定就是整個視窗
+  }
+  )
+  wow.init();
+
+
   // 滑鼠卷軸
   $(window).on('scroll',function () {
     // 向下指引箭頭隱藏
@@ -14,24 +28,32 @@ $(document).ready(function () {
     }else{
       $('.scroll-icon').css('visibility','visible');
     }
+
+    // navbar 
+    var $navShow = $(".js-nav")
+    if(scrollDistance>600){
+      $navShow.addClass("navbar-md")
+    }else{
+      $navShow.removeClass("navbar-md")
+    }
     // skill背景動畫
     var $aboutAnimationL  = $(".js-AnimationL");
     var $aboutAnimationR  = $(".js-AnimationR");
     var $aboutPhoto = $(".js-photo")
-    if(scrollDistance > 500){
+    var $aboutContent =$(".js-content")
+    if(scrollDistance > 400){
+      $aboutContent.addClass("about__group")
       $aboutPhoto.addClass("photo")
       $aboutAnimationL .addClass("bgL");
       $aboutAnimationR .addClass("bgR");
       $aboutAnimationR .removeClass("bgR2");
       $aboutAnimationL .removeClass("bgL2");
     }else{
+      $aboutContent.removeClass("about__group")
       $aboutPhoto.removeClass("photo")
       $aboutAnimationR .addClass("bgR2");
       $aboutAnimationL .addClass("bgL2");
     }
-    
-    // 
-    
 
   })
 })

@@ -33,10 +33,6 @@
   margin: 0 20px;
   justify-content: space-between;
   align-items: center;
-
-  @include pad {
-    margin: 0 0px;
-  }
 }
 .nav__my-logo {
   margin: 0;
@@ -54,8 +50,18 @@
     &:hover {
       color: $dark-grey;
     }
+  }
+}
+@include pad {
+  .navbar-md {
+    background-color: $white;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
+    transition: all 0.5s linear;
+  }
+  .nav__my-logo {
+    padding: 5px 0px 5px 24px;
 
-    @include pad {
+    .icon-btn {
       font-size: 28px;
     }
   }
@@ -637,12 +643,25 @@
       opacity: 1;
     }
   }
-
+  .show {
+    display: none;
+  }
   .about__group {
     position: absolute;
+    display: initial;
     top: 15%;
     left: 50%;
     transform: translatex(-50%);
+    animation: aboutShow 1s linear forwards;
+
+    @keyframes aboutShow {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
     .sub1 {
       display: block;
@@ -713,12 +732,12 @@
       height: 250px;
       background-position: top;
       left: 45%;
-      bottom: 50%;
+      bottom: 45%;
     }
     .about__group {
       .sub1 {
-        margin: -50px 0 0 0;
-        text-align: center;
+        margin: -20px 60px 0 0;
+        text-align: right;
       }
 
       .my-name {
@@ -807,8 +826,6 @@
       margin-bottom: 20px;
     }
   }
-}
-@include pad {
 }
 .sub-center {
   display: block;
@@ -990,7 +1007,7 @@
   .work-btn {
     left: 50%;
     transform: translateX(-50%);
-    color: $primary;
+    color: $secondary;
     height: 48px;
     font-size: 20px;
     font-weight: 400;
@@ -1000,10 +1017,10 @@
     font-family: 'Raleway', 'Helvetica', 'roboto', arial, sans-serif;
     cursor: pointer;
     background-color: inherit;
-    border: 3px solid $primary;
+    border: 3px solid $secondary;
   }
   .work-btn:hover {
-    background-color: $primary;
+    background-color: $secondary;
     color: #fefefe;
   }
 }

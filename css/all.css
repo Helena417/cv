@@ -5389,11 +5389,6 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 768px) {
-  .navbar {
-    margin: 0 0px;
-  }
-}
 
 .nav__my-logo {
   margin: 0;
@@ -5411,12 +5406,21 @@ ul {
 .nav__my-logo .icon-btn:hover {
   color: #484848;
 }
+
 @media (max-width: 768px) {
+  .navbar-md {
+    background-color: #fefefe;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s linear;
+  }
+
+  .nav__my-logo {
+    padding: 5px 0px 5px 24px;
+  }
   .nav__my-logo .icon-btn {
     font-size: 28px;
   }
 }
-
 /* navbar menu */
 .nav__menu {
   display: flex;
@@ -6106,11 +6110,33 @@ ul {
     opacity: 1;
   }
 }
+.about .show {
+  display: none;
+}
 .about .about__group {
   position: absolute;
+  display: initial;
   top: 15%;
   left: 50%;
   transform: translatex(-50%);
+  -webkit-animation: aboutShow 1s linear forwards;
+          animation: aboutShow 1s linear forwards;
+}
+@-webkit-keyframes aboutShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes aboutShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .about .about__group .sub1 {
   display: block;
@@ -6174,11 +6200,11 @@ ul {
     height: 250px;
     background-position: top;
     left: 45%;
-    bottom: 50%;
+    bottom: 45%;
   }
   .about .about__group .sub1 {
-    margin: -50px 0 0 0;
-    text-align: center;
+    margin: -20px 60px 0 0;
+    text-align: right;
   }
   .about .about__group .my-name {
     margin-top: 150px;
@@ -6435,7 +6461,7 @@ ul {
 .work .work-btn {
   left: 50%;
   transform: translateX(-50%);
-  color: #ffcc52;
+  color: #71d0d6;
   height: 48px;
   font-size: 20px;
   font-weight: 400;
@@ -6445,10 +6471,10 @@ ul {
   font-family: "Raleway", "Helvetica", "roboto", arial, sans-serif;
   cursor: pointer;
   background-color: inherit;
-  border: 3px solid #ffcc52;
+  border: 3px solid #71d0d6;
 }
 .work .work-btn:hover {
-  background-color: #ffcc52;
+  background-color: #71d0d6;
   color: #fefefe;
 }
 

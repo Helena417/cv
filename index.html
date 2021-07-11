@@ -12,9 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;900&family=Quantico&display=swap" rel="stylesheet">
 
   <!-- css -->
-  <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.css" >
+  <link rel="stylesheet" href="css/all.css">
 
+</head>
 <body>
 
   <div class="wrapper">
@@ -22,7 +26,7 @@
     <!-- Start Header -->
     <header class="header">
 
-      <div class="navbar">
+      <div class="navbar m-md-0 js-nav">
         <div class="nav__my-logo" alt="logo">
           <a tabindex="1" href="index.html" class=" icon-btn">
             <i class="icon-cyh">
@@ -56,8 +60,8 @@
     <!-- Start main -->
     <main class="main">
       <!-- Start Home -->
-      <div class="hero">
-        <div class="hero__hello">
+      <div class="hero wow bounceInDown">
+        <div class="hero__hello ">
           <h1>Hello</h1>
           <h2>I'm Yun Han.</h2>
           <h3>I am a designer and also a developer.</h3>
@@ -101,44 +105,44 @@
           <div class="js-photo"></div>
         </div>
         <div class="js-AnimationR bgR bgR2"></div>
-          <div class="about__group">
-            <h2 class="sub1 md-sub-f">About me</h2>
+        <div class="show js-content">
+          <h2 class="sub1 md-sub-f">About me</h2>
 
-            <h3 class="my-name">陳<br>筠涵 <p >Chen Yun-Han</p></h3>
-            <p class="bio">我是一名前端工程師，喜歡嘗試與挑戰，擁有跨領域的知識與技能，以工程師的邏輯思維來解決問題，以設計師的創新思考來靈活變通，並注重UI/UX，讓自己在團隊中能達到有效的溝通。</p>
-            <div class="personal mt-md-4 p-md">
-              <a href="mailto:susan2017966@gmail.com" class="mail">
-                <i class="uil uil-envelope personal__icon"></i>
-                <span>susan2017966@gmail.com</span>
-              </a>
-              <a href="https://github.com/Helena417" class="git  target="_blank" ">
-                <i class="uil uil-github-alt personal__icon"></i>
-                <span>Helena417</span>  
-              </a>
-            </div>
-          </div> 
-          <img class="quote md-hidden">
-          <p class="intro md-hidden">人生就是要不停的開創與挑戰！</p>
+          <h3 class="my-name ">陳<br>筠涵 <p >Chen Yun-Han</p></h3>
+          <p class="bio">我是一名前端工程師，喜歡嘗試與挑戰，擁有跨領域的知識與技能，以工程師的邏輯思維來解決問題，以設計師的創新思考來靈活變通，並注重UI/UX，讓自己在團隊中能達到有效的溝通。</p>
+          <div class="personal mt-md-4 p-md">
+            <a href="mailto:susan2017966@gmail.com" class="mail">
+              <i class="uil uil-envelope personal__icon"></i>
+              <span>susan2017966@gmail.com</span>
+            </a>
+            <a href="https://github.com/Helena417" class="git  target="_blank" ">
+              <i class="uil uil-github-alt personal__icon"></i>
+              <span>Helena417</span>  
+            </a>
+          </div>
+        </div> 
+        <img class="quote md-hidden">
+        <p class="intro md-hidden">人生就是要不停的開創與挑戰！</p>
       </div>
       <!-- End About -->
 
       <!-- Start skill -->
-      <div class="skill" id="skill">
+      <div class="skill " id="skill">
         <div class="skill-bg-white"></div>
-        <div class="skill-bg pb-md-4">
-          <h2 class="sub-center md-sub-f mt-md-0">Skill</h2>
+        <div class="skill-bg pb-md-0">
+          <h2 class="sub-center md-sub-f mt-md-0 wow fadeIn">Skill</h2>
           <div class="container">
-            <div class="row">
-              <div class="col-lg-3">
+            <div class="row ">
+              <div class="col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card-icon">
                   <img class="img" src="./images/card_icon_01.png">
                 </div>
-                <div class="card-txt">
+                <div class="card-txt ">
                   <h3 class="txt-sub">Web Development</h3>
                   <p class="txt-word">Html / Css / JavaScript /<br> Bootstrap / Sass / RWD /<br> jQuery / Ajax (axios) /<br> React (learing)</p>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 wow fadeInUp " data-wow-delay="0.3s">
                 <div class="card-icon">
                   <img class="img" src="./images/card_icon_02.png">
                 </div>
@@ -147,7 +151,7 @@
                   <p class="txt-word">Git / Github / Postman /<br> Wireshark / phpMyAdmin /<br> webpack / Adobe XD /<br> Photoshop / Illustrator</p>
                 </div>
               </div>
-              <div class="col-lg-3">
+              <div class="col-lg-3 wow fadeInUp " data-wow-delay="0.5s">
                 <div class="card-icon">
                   <img class="img" src="./images/card_icon_03.png">
                 </div>
@@ -163,11 +167,11 @@
       <!-- END  skill -->
       
       <!-- Start Experience -->
-      <div class="exp pt-md-4 pb-md-4" id="exp">
+      <div class="exp pb-md-4" id="exp">
         <div class="container">
-          <h2 class="sub-center md-sub-f mt-0 mb-md-0">Experience</h2>
+          <h2 class="sub-center md-sub-f mt-0 mb-md-0 wow fadeIn ">Experience</h2>
           <div class="flex">
-            <ul class="exp-list">
+            <ul class="exp-list wow fadeInUp">
               <li class="grid group">
                 <div class="list-line"></div>
                 <div class="dot">
@@ -264,8 +268,8 @@
       <!-- Start Work -->
       <div class="work mt-md-0" id="work">
         <div class="container">
-          <h2 class="sub-center mt-md-0 md-sub-f">My works</h2>
-          <div class="work-list">
+          <h2 class="sub-center mt-md-0 md-sub-f wow fadeIn">My works</h2>
+          <div class="work-list wow fadeInUp">
             <div class="row">
               <div class="col-lg-4">
                 <div class="imgbox">
@@ -297,8 +301,8 @@
       <div class="contact pt-md-5" id="contact">
         <div class="contact-bg"></div>
         <div class="container ">
-          <h2 class="sub-center md-sub-f">Contact</h2>
-          <form class="form " action="https://formspree.io/f/xgerlejd" method="post">
+          <h2 class="sub-center md-sub-f wow fadeIn">Contact</h2>
+          <form class="form wow fadeInUp" action="https://formspree.io/f/xgerlejd" method="post">
 						<label for="Contact-name">Name</label>
 						<input type="text" name="Contact-name">
 						<label for="Contact-mail">Email</label>
@@ -343,6 +347,8 @@
   <!-- JS -->
   <script src="js/jQuery v3.6.0.js"></script>
   <script src="js/Script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+              
 
 </body>
 
