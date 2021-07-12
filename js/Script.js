@@ -41,7 +41,7 @@ $(document).ready(function () {
     var $aboutAnimationR  = $(".js-AnimationR");
     var $aboutPhoto = $(".js-photo")
     var $aboutContent =$(".js-content")
-    if(scrollDistance > 400){
+    if(scrollDistance > 300){
       $aboutContent.addClass("about__group")
       $aboutPhoto.addClass("photo")
       $aboutAnimationL .addClass("bgL");

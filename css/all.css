@@ -366,6 +366,7 @@ html {
 body {
   margin: 0;
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* width */
@@ -5584,7 +5585,7 @@ ul {
   position: relative;
   text-align: center;
   opacity: 0.3;
-  top: 92vh;
+  top: 88vh;
   -webkit-animation: breath 2s 3s infinite;
           animation: breath 2s 3s infinite;
 }
@@ -5703,6 +5704,7 @@ ul {
   height: 100%;
 }
 .hero__left .left-icon {
+  cursor: pointer;
   left: 40px;
   -webkit-animation: moveLeft 1s 3.5s infinite alternate;
           animation: moveLeft 1s 3.5s infinite alternate;
@@ -5789,6 +5791,7 @@ ul {
   height: 100%;
 }
 .hero__right .right-icon {
+  cursor: pointer;
   right: 50px;
   -webkit-animation: moveRight 1s 3.5s infinite alternate;
           animation: moveRight 1s 3.5s infinite alternate;
@@ -5846,14 +5849,15 @@ ul {
 }
 
 .page-id {
+  height: 0;
   display: block;
   position: relative;
   z-index: 100;
-  cursor: pointer;
 }
 
 #left-page input {
   opacity: 0;
+  width: 0;
   -webkit-touch-callout: none;
 }
 #left-page input:checked ~ i {
@@ -5866,6 +5870,7 @@ ul {
 #right-page input {
   opacity: 0;
   -webkit-touch-callout: none;
+  width: 0;
 }
 #right-page input:checked ~ .right-coder {
   transform: none;
@@ -5873,7 +5878,7 @@ ul {
 
 @media (max-width: 1025px) {
   .hero__hello {
-    top: 35%;
+    top: 32%;
   }
   .hero__hello h1 {
     font-size: 120px;
@@ -5891,26 +5896,29 @@ ul {
     display: none;
   }
 
-  .scroll i,
-.scroll span {
-    -webkit-animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
-            animation: scroll_move 0.7s 4s ease-in-out infinite alternate;
+  .scroll-icon {
+    -webkit-animation: scroll_move 0.7s ease-in-out infinite alternate !important;
+            animation: scroll_move 0.7s ease-in-out infinite alternate !important;
   }
 
   @-webkit-keyframes scroll_move {
     0% {
-      top: 90vh;
+      opacity: 0.4;
+      top: 88vh;
     }
     100% {
+      opacity: 0.8;
       top: 92vh;
     }
   }
 
   @keyframes scroll_move {
     0% {
-      top: 90vh;
+      opacity: 0.4;
+      top: 88vh;
     }
     100% {
+      opacity: 0.8;
       top: 92vh;
     }
   }
@@ -5933,30 +5941,6 @@ ul {
   #left-page,
 #right-page {
     display: none;
-  }
-
-  .scroll i,
-.scroll span {
-    -webkit-animation: scroll_move 1s 1s ease-in-out infinite alternate;
-            animation: scroll_move 1s 1s ease-in-out infinite alternate;
-  }
-
-  @-webkit-keyframes scroll_move {
-    0% {
-      top: 90vh;
-    }
-    100% {
-      top: 92vh;
-    }
-  }
-
-  @keyframes scroll_move {
-    0% {
-      top: 90vh;
-    }
-    100% {
-      top: 92vh;
-    }
   }
 }
 /*-------------------------*/
@@ -6160,6 +6144,7 @@ ul {
   margin: 0px;
   width: 450px;
   font-size: 18px;
+  text-align: justify;
 }
 .about .about__group .personal {
   margin-top: 40px;
@@ -6564,6 +6549,9 @@ ul {
 .work .work-btn:hover {
   background-color: #71d0d6;
   color: #fefefe;
+}
+.work a {
+  width: auto;
 }
 
 @media (max-width: 1025px) {
