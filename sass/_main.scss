@@ -829,7 +829,7 @@
   .skill-bg-white {
     position: absolute;
     background-color: $white;
-    width: 50%;
+    width: calc(50% + 4px);
     height: 100vh;
     z-index: 1;
     clip-path: polygon(0 0, 100% 0, 0% 100%, 0% 100%);
