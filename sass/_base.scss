@@ -29,16 +29,15 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
   width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
+
 /* width */
 ::-webkit-scrollbar-track-piece {
   overflow: hidden !important;
   background: #cbcbcb;
 }
-
 ::-webkit-scrollbar {
   position: fixed;
   width: 8px;
