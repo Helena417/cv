@@ -243,7 +243,7 @@
     position: relative;
     text-align: center;
     opacity: 0.3;
-    top: 88vh;
+    top: 85vh;
     animation: breath 2s 3s infinite;
     @keyframes breath {
       0% {
@@ -508,7 +508,7 @@
 }
 @include laptop {
   .hero__hello {
-    top: 32%;
+    top: 31%;
 
     h1 {
       font-size: 120px;
@@ -531,11 +531,11 @@
   @keyframes scroll_move {
     0% {
       opacity: 0.4;
-      top: 88vh;
+      top: 85vh;
     }
     100% {
       opacity: 0.8;
-      top: 92vh;
+      top: 90vh;
     }
   }
 }
@@ -779,22 +779,22 @@
   }
   @include pad {
     .photo {
-      background-size: 200px;
-      height: 200px;
+      background-size: 150px;
+      height: 150px;
       left: 25%;
-      bottom: 50%;
+      bottom: 55%;
     }
 
     .about__group {
       top: 10%;
 
       .sub1 {
-        margin: 20px 0 0 0;
+        margin: 10px 0 0 0;
       }
       .my-name {
         font-size: 35px;
         line-height: initial;
-        margin: 100px 0 20px 0;
+        margin: 60px 0 0px 0;
         text-align: right;
         padding-right: 10%;
         padding-left: 0;
@@ -805,17 +805,18 @@
         border-radius: 10px;
         width: 300px;
         margin-top: 0;
-        padding: 10px 15px;
+        padding: 15px 20px;
       }
       .bio,
       .personal {
         font-size: initial;
         line-height: initial;
-        margin-top: 10px;
+        margin-top: 0px;
         width: 100%;
 
         a {
-          margin-bottom: 15px;
+          font-size: 15px;
+          margin-bottom: 0px;
         }
       }
     }
@@ -897,6 +898,11 @@
   transform: translateX(-50%);
   margin-top: 50px;
   z-index: 2;
+}
+@include laptop {
+  .skill-bg-white {
+    width: 50% !important;
+  }
 }
 @include pad {
   .txt-word {
