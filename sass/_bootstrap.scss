@@ -719,6 +719,13 @@
   .offset-lg-11 {
     margin-left: 91.6666666667%;
   }
+
+  .col-lg-push-5 {
+    left: 50%;
+  }
+  .col-lg-pull-5 {
+    right: 33.3333333333%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2835,7 +2842,7 @@
     padding-left: 3rem !important;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1025px) {
   .d-lg-inline {
     display: inline !important;
   }
@@ -3256,6 +3263,9 @@
 
   .ms-lg-auto {
     margin-left: auto !important;
+  }
+  .ml-lg-0 {
+    margin-left: 0 !important;
   }
 
   .p-lg-0 {

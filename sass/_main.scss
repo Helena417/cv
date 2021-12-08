@@ -256,7 +256,7 @@
         opacity: 0.3;
       }
     }
-    i {
+    span {
       position: absolute;
       font-size: 45px;
       left: 50%;
@@ -696,13 +696,12 @@
       font-family: $font-noto;
 
       a {
-        margin-top: 5px;
-        display: block;
+        margin: 20px 0px 0 0;
       }
 
       .personal__icon {
-        font-size: 22px;
-        color: $primary;
+        font-size: 28px;
+        color: $secondary;
       }
     }
   }
@@ -763,13 +762,17 @@
 
       .bio,
       .personal {
-        font-size: 26px;
+        font-size: 24px;
         line-height: 40px;
         margin-top: 60px;
         width: 70vw;
 
         .personal__icon {
           color: $word;
+        }
+        a {
+          font-size: 15px;
+          margin: 0 20px;
         }
       }
     }
@@ -811,13 +814,12 @@
       .personal {
         font-size: initial;
         line-height: initial;
-        margin-top: 0px;
+        margin-top: 10px;
         width: 100%;
-
-        a {
-          font-size: 15px;
-          margin-bottom: 0px;
-        }
+      }
+      .personal {
+        text-align: center;
+        margin-top: 30px;
       }
     }
   }
@@ -1069,6 +1071,7 @@
 
   .row {
     justify-content: center;
+    margin-bottom: 50px;
   }
   .work-list {
     margin-top: 80px;
@@ -1085,6 +1088,30 @@
     }
     .work-text__intro {
       font-size: 16px;
+    }
+    .tag {
+      position: absolute;
+      right: 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: $secondary;
+    }
+    .tag:hover {
+      color: $primary;
+    }
+
+    .tag:hover::before {
+      width: 100%;
+    }
+    .tag::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $primary;
+      transition: all 0.3s;
     }
   }
 
@@ -1104,7 +1131,11 @@
       background-position: center;
       background-image: url('../images/project_01.png');
     }
+    img {
+      width: 100%;
+    }
   }
+
   .work-btn {
     left: 50%;
     transform: translateX(-50%);
@@ -1140,10 +1171,14 @@
       }
     }
     .work-text {
-      margin: 0px 40px 0 40px;
+      margin: 0px 40px;
 
       .work-text__title {
         margin-top: 0;
+      }
+
+      .tag {
+        position: relative;
       }
     }
   }
@@ -1158,7 +1193,7 @@
       }
     }
     .work-text {
-      margin: 40px 20px;
+      margin: 20px 20px;
 
       .work-text__title {
         margin-top: -50px;

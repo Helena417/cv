@@ -361,6 +361,7 @@ template {
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -530,7 +531,16 @@ ul {
   top: 0;
 }
 
-@media (max-width: 768px) {
+.text-right {
+  text-align: right;
+}
+
+@media (max-width: 1025px) {
+  .text-left-lg {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
   .md-sub-f {
     font-size: 35px;
   }
@@ -1270,6 +1280,14 @@ ul {
 
   .offset-lg-11 {
     margin-left: 91.6666666667%;
+  }
+
+  .col-lg-push-5 {
+    left: 50%;
+  }
+
+  .col-lg-pull-5 {
+    right: 33.3333333333%;
   }
 }
 @media (min-width: 1200px) {
@@ -3386,7 +3404,7 @@ ul {
     padding-left: 3rem !important;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 1025px) {
   .d-lg-inline {
     display: inline !important;
   }
@@ -3807,6 +3825,10 @@ ul {
 
   .ms-lg-auto {
     margin-left: auto !important;
+  }
+
+  .ml-lg-0 {
+    margin-left: 0 !important;
   }
 
   .p-lg-0 {
@@ -5611,7 +5633,7 @@ ul {
     opacity: 0.3;
   }
 }
-.hero .scroll-icon i {
+.hero .scroll-icon span {
   position: absolute;
   font-size: 45px;
   left: 50%;
@@ -6152,12 +6174,11 @@ ul {
   font-family: "Noto Sans TC", "Helvetica", "roboto", arial, sans-serif;
 }
 .about .about__group .personal a {
-  margin-top: 5px;
-  display: block;
+  margin: 20px 0px 0 0;
 }
 .about .about__group .personal .personal__icon {
-  font-size: 22px;
-  color: #ffcc52;
+  font-size: 28px;
+  color: #71d0d6;
 }
 .about .quote {
   position: absolute;
@@ -6214,7 +6235,7 @@ ul {
   }
   .about .about__group .bio,
 .about .about__group .personal {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 40px;
     margin-top: 60px;
     width: 70vw;
@@ -6222,6 +6243,11 @@ ul {
   .about .about__group .bio .personal__icon,
 .about .about__group .personal .personal__icon {
     color: #456e84;
+  }
+  .about .about__group .bio a,
+.about .about__group .personal a {
+    font-size: 15px;
+    margin: 0 20px;
   }
   .about .md-hidden {
     display: none;
@@ -6260,13 +6286,12 @@ ul {
 .about .about__group .personal {
     font-size: initial;
     line-height: initial;
-    margin-top: 0px;
+    margin-top: 10px;
     width: 100%;
   }
-  .about .about__group .bio a,
-.about .about__group .personal a {
-    font-size: 15px;
-    margin-bottom: 0px;
+  .about .about__group .personal {
+    text-align: center;
+    margin-top: 30px;
   }
 }
 
@@ -6505,6 +6530,7 @@ ul {
 }
 .work .row {
   justify-content: center;
+  margin-bottom: 50px;
 }
 .work .work-list {
   margin-top: 80px;
@@ -6521,6 +6547,29 @@ ul {
 .work .work-text .work-text__intro {
   font-size: 16px;
 }
+.work .work-text .tag {
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #71d0d6;
+}
+.work .work-text .tag:hover {
+  color: #ffcc52;
+}
+.work .work-text .tag:hover::before {
+  width: 100%;
+}
+.work .work-text .tag::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffcc52;
+  transition: all 0.3s;
+}
 .work .imgbox {
   width: 100%;
 }
@@ -6536,6 +6585,9 @@ ul {
   background-size: cover;
   background-position: center;
   background-image: url("../images/project_01.png");
+}
+.work .imgbox img {
+  width: 100%;
 }
 .work .work-btn {
   left: 50%;
@@ -6571,10 +6623,13 @@ ul {
     transform: translateX(-50%);
   }
   .work .work-text {
-    margin: 0px 40px 0 40px;
+    margin: 0px 40px;
   }
   .work .work-text .work-text__title {
     margin-top: 0;
+  }
+  .work .work-text .tag {
+    position: relative;
   }
 }
 @media (max-width: 767px) {
@@ -6586,7 +6641,7 @@ ul {
     height: 90%;
   }
   .work .work-text {
-    margin: 40px 20px;
+    margin: 20px 20px;
   }
   .work .work-text .work-text__title {
     margin-top: -50px;
