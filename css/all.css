@@ -535,6 +535,10 @@ ul {
   text-align: right;
 }
 
+.text-left {
+  text-align: left;
+}
+
 @media (max-width: 1025px) {
   .text-left-lg {
     text-align: left;
@@ -5321,55 +5325,55 @@ ul {
 }
 
 .icon-link:before {
-  content: "";
+  content: "\e800";
 }
 
 .icon-home:before {
-  content: "";
+  content: "\e801";
 }
 
 .icon-left-open:before {
-  content: "";
+  content: "\e802";
 }
 
 .icon-right-open:before {
-  content: "";
+  content: "\e803";
 }
 
 .icon-down-open:before {
-  content: "";
+  content: "\e804";
 }
 
 .icon-up-open:before {
-  content: "";
+  content: "\e805";
 }
 
 .icon-cyh:before {
-  content: "";
+  content: "\e806";
 }
 
 .icon-menu:before {
-  content: "";
+  content: "\f0c9";
 }
 
 .icon-mail-alt:before {
-  content: "";
+  content: "\f0e0";
 }
 
 .icon-rocket:before {
-  content: "";
+  content: "\f135";
 }
 
 .icon-down:before {
-  content: "";
+  content: "\f175";
 }
 
 .icon-graduation-cap:before {
-  content: "";
+  content: "\f19d";
 }
 
 .icon-brush:before {
-  content: "";
+  content: "\f1fc";
 }
 
 /*
@@ -6544,6 +6548,11 @@ ul {
   font-size: 30px;
   color: #456e84;
 }
+.work .work-text .work-text__time {
+  line-height: 0;
+  color: #484848;
+  font-weight: 700;
+}
 .work .work-text .work-text__intro {
   font-size: 16px;
 }
@@ -6574,7 +6583,7 @@ ul {
   width: 100%;
 }
 .work .imgbox .imgbox__inner {
-  padding-top: calc(100% * 3 / 4);
+  padding-top: 75%;
 }
 .work .imgbox .image {
   position: absolute;
@@ -6584,7 +6593,6 @@ ul {
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url("../images/project_01.png");
 }
 .work .imgbox img {
   width: 100%;
@@ -6626,7 +6634,8 @@ ul {
     margin: 0px 40px;
   }
   .work .work-text .work-text__title {
-    margin-top: 0;
+    margin-top: 0px;
+    font-size: 20px;
   }
   .work .work-text .tag {
     position: relative;
@@ -6645,7 +6654,7 @@ ul {
   }
   .work .work-text .work-text__title {
     margin-top: -50px;
-    margin-bottom: -10px;
+    margin-bottom: 20px;
   }
   .work .work-btn {
     margin-top: 10px;
