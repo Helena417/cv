@@ -56,57 +56,24 @@ $(document).ready(function () {
     }
 
   })
+
 })
-
-
-// padding icon hide
-function icon_hidden(obj) {
-  if (obj.style.display == 'block') {
-    obj.style.display = 'none';
-  } else {
-    obj.style.display = 'block';
-  }
-}
 
 var state ={
   click:false
 }
-let scroll_lock = function() {
-  if(state.click){
-      //點選彈出時允許圖片放大並禁止滑動
-      $('#design-slide').css('display', 'block');
-      $('#code-slide').css('display', 'block');
-      document.documentElement.style.overflow = 'hidden'; //電腦端禁止滑動
-  }else{
-      document.documentElement.style.overflow = 'visible';
+
+// change menu bg
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar"); // 取得 navbar 元素
+  const scrollPosition = window.scrollY; // 取得滾動的垂直位置
+
+  // 如果滾動位置大於某個閾值（例如 100px），就改變 navbar 的背景顏色
+  if (scrollPosition > 100) {
+    navbar.classList.add("scroll-bg"); // 添加類別
+  } else {
+    navbar.classList.remove("scroll-bg"); // 移除類別
   }
-}
-
-function slider() {
-  let ds = document.getElementById('design-slide');
-  let cs = document.getElementById('code-slide');
-  ds.style.opacity = '1';
-  cs.style.opacity = '1';
-}
-
-window.onload = function () {
-  let dsn = document.getElementById('design');
-  let cod = document.getElementById('code');
-  let btnL = document.getElementById('left-btn');
-  let btnR = document.getElementById('right-btn');
+});
 
 
-  dsn.addEventListener('click',function () {
-    state.click=!state.click;
-    icon_hidden(btnR);
-    slider();
-    scroll_lock();
-  })
-  cod.addEventListener('click',function () {
-    state.click=!state.click;
-    icon_hidden(btnL);
-    slider();
-    scroll_lock();
-  })
-
-};

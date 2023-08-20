@@ -30,20 +30,19 @@
 .navbar {
   display: flex;
   // border: 1px solid #000;
-  margin: 0 20px;
+  padding: 0 20px;
   justify-content: space-between;
   align-items: center;
 }
 .nav__my-logo {
   margin: 0;
-  padding: 20px 0px 18px 24px;
+  padding: 20px 0px 18px 12px;
 
   .icon-btn {
     /* border: 1px solid #000; */
     display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 48px;
+    width: 88px;
+    height: 28px;
     font-size: 30px;
     color: $word;
 
@@ -52,19 +51,28 @@
     }
   }
 }
+.scroll-bg {
+  background-color: rgba(255, 255, 255, 0.85); 
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 @include pad {
   .navbar-md {
     background-color: $white;
     box-shadow: 0 3px 5px rgb(0 0 0 / 10%);
     transition: all 0.5s linear;
   }
-  .nav__my-logo {
+  contact-bg {
     padding: 5px 0px 5px 24px;
-
-    .icon-btn {
-      font-size: 28px;
-    }
   }
+  .nav__my-logo .icon-btn {
+    width: 72px;
+}
+  .nav__my-logo {
+    margin: 0;
+    padding: 12px 0px 12px 0px;
+}
 }
 /* navbar menu */
 .nav__menu {
@@ -650,11 +658,42 @@
   }
   .about__group {
     position: absolute;
-    display: initial;
-    top: 15%;
+    display: flex;
+    top: 20%;
     left: 50%;
     transform: translatex(-50%);
     animation: aboutShow 1s linear forwards;
+    background-color: #ffffffd6;
+    width: 80vw;
+    padding: 40px;
+    border-radius: 16px;
+    margin-top: -40px;
+    box-shadow: 0 3px 10px rgba(111, 111, 111, 0.3);
+
+
+    .about-title {
+      z-index: 1;
+      position: absolute;
+      padding: 0 0 0 20px;
+      color: #fff;
+      font-size: 44px;
+      text-shadow: 0.1em 0.1em #6060601f;
+  }
+    
+    .my-photo{
+      position: relative;
+    }
+    .about-content{
+      display: block;
+      padding-left:40px;
+
+      .about-nane_info{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+    }
+
 
     @keyframes aboutShow {
       0% {
@@ -675,45 +714,50 @@
     .my-name {
       font-family: '微軟正黑體';
       color: $word;
-      margin-top: 50px;
 
       p {
         display: inline;
-        font-size: 20px;
+        font-size: 28px;
+        font-weight: 600;
       }
     }
     .bio {
       display: block;
       margin: 0px;
-      width: 450px;
       font-size: 18px;
       text-align: justify;
     }
 
     .personal {
-      margin-top: 40px;
-      font-size: 16px;
+      font-size: 20px;
       font-family: $font-noto;
+      margin-top: 12px;
 
       a {
         margin: 20px 0px 0 0;
       }
 
       .personal__icon {
-        font-size: 28px;
+        font-size: 32px;
         color: $word;
+        margin-left: 12px;
       }
     }
+    .personal-mobile{
+      display: none;
+    }
   }
+}
+
+
   .quote {
     position: absolute;
-    right: 3%;
+    right: 13%;
     display: inline-block;
     width: 60px;
     height: 60px;
-    top: 80%;
+    top: 60%;
     opacity: 0.2;
-    z-index: 10;
     background-position: center;
     background-size: cover;
     background-image: url('../images/quote.png');
@@ -727,108 +771,111 @@
     color: lighten($white, 20%);
     text-align: right;
   }
+
   @include laptop {
-    .photo {
-      background-size: 250px;
-      background-position: top;
-      left: 20%;
-      bottom: -50px;
-    }
-    .md-hide {
-      display: none;
-    }
-    .md-photo {
-      display: block;
-    }
-    .about__group {
-      top: 10%;
+    .about{
+      .about__group{
+      width: 90vw;
+      flex-wrap: wrap;
 
-      .sub1 {
-        margin: 0 0 150px 0;
-        text-align: center;
-      }
-      .my-name {
-        text-align: left;
-        margin-top: 200px;
-        padding-left: 35%;
-        font-size: 50px;
-        line-height: 60px;
-
-        p {
-          display: block;
-          margin: 0;
+        .about-title {
+          font-size: 32px;
         }
-      }
-
-      .bio,
-      .personal {
-        font-size: 24px;
-        line-height: 40px;
-        margin-top: 60px;
-        width: 70vw;
-
-        .personal__icon {
-          color: $word;
+        .my-photo {
+          height: 333px;
         }
-        a {
-          font-size: 15px;
-          margin: 0 20px;
+        .about-content{
+          padding-left:0px;
+
+          .about-nane_info {
+            justify-content: center;
+            margin: -130px -150px 40px 0;
+          }
         }
-      }
+        .personal{
+          top: 68px;
+          left: 10px;
+        }
+      } 
     }
-    .md-hidden {
-      display: none;
-    }
+    
   }
+
   @include pad {
-    .photo {
-      background-size: 150px;
-      height: 150px;
-      left: 25%;
-      bottom: 55%;
+    .about{
+      .about__group{
+        padding: 20px;
+        width: 90vw;
+        top: 8%;
+        z-index: 5;
+
+        .about-photo{
+          height: 50%;
+        }
+        .my-name {
+          background: #ffffff;
+          padding: 0 16px;
+          color: #456e84;
+          font-size: 30px;
+          line-height: 38px;
+        }
+        .my-photo {
+          height: 250px;
+        }
+        
+        .about-title {
+          font-size: 32px;
+          line-height: 32px;
+          top: -12px;
+        }
+      
+        .about-content{
+          padding-left:0px;
+
+          .about-nane_info {
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            margin: -130px 0 24px 0;
+          }
+        }
+        .personal{
+          display: none;
+          top: 0;
+          left: 35%;
+        }
+        .personal-mobile{
+          display: block;
+        }
+
+        .bio {
+          font-size: 16px;
+        } 
+      }
+  
+      .intro{
+        display: none;
+      }
     }
+    
+  }
 
-    .about__group {
-      top: 10%;
-
-      .sub1 {
-        margin: 10px 0 0 0;
-      }
-      .my-name {
-        font-size: 35px;
-        line-height: initial;
-        margin: 60px 0 0px 0;
-        text-align: right;
-        padding-right: 10%;
-        padding-left: 0;
-      }
-      .about-txt-bg {
-        background-color: $white;
-        box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
-        border-radius: 10px;
-        width: 300px;
-        margin-top: 0;
-        padding: 15px 20px;
-      }
-      .bio,
-      .personal {
-        font-size: initial;
-        line-height: initial;
-        margin-top: 10px;
-        width: 100%;
-      }
-      .personal {
-        text-align: center;
-        margin-top: 30px;
+  @media (max-width: 378px) {
+    .about{
+      .about__group{
+        .personal-mobile{
+          display: none;
+        }
       }
     }
   }
-}
 
 /*-------------------------*/
 /** $Skill
 ---------------------*/
 .skill {
+  position: relative;
+
   .skill-bg-white {
     position: absolute;
     background-color: $white;
@@ -989,13 +1036,14 @@
   .exp-detail {
     flex-direction: column;
     grid-column-start: 5;
-    grid-column-end: 13;
+    grid-column-end: 12;
 
     .detail-sub {
       margin: 0;
       font-family: '微軟正黑體';
-      font-weight: 600;
-      color: #000;
+      font-weight: 500;
+      color: rgb(21, 43, 91);
+      margin-bottom: 12px;
     }
     p {
       margin: 0;
@@ -1003,7 +1051,7 @@
       font-weight: 500;
       font-size: 16px;
       font-family: '微軟正黑體';
-      color: $dark-grey;
+      color: rgb(56, 63, 80);;
     }
   }
 
@@ -1065,105 +1113,79 @@
 /*-------------------------*/
 /** $Work
 ---------------------*/
-.work {
-  background-color: $white;
-  padding-top: 100px;
 
-  .row {
-    justify-content: center;
-    margin-bottom: 50px;
-  }
-  .work-list {
-    margin-top: 80px;
-  }
-
-  .work-text {
-    text-align: left;
-    margin: 40px 10px 0 40px;
-
-    .work-text__title {
-      z-index: 1;
-      font-size: 30px;
-      color: $word;
-    }
-    .work-text__time {
-      line-height: 0;
-      color: $dark-grey;
-      font-weight: 700;
-    }
-    .work-text__intro {
-      font-size: 16px;
-    }
-    .tag {
-      position: absolute;
-      right: 0;
-      font-size: 18px;
-      font-weight: 600;
-      color: $secondary;
-      width: fit-content;
-    }
-    .tag:hover {
-      color: $primary;
-    }
-
-    .tag:hover::before {
-      width: 100%;
-    }
-    .tag::before {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background-color: $primary;
-      transition: all 0.3s;
-    }
-  }
-
-  .imgbox {
-    width: 100%;
-
-    .imgbox__inner {
-      padding-top: calc(100% * 3 / 4);
-    }
-    .image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 110%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-    img {
-      width: 100%;
-    }
-  }
-
-  .work-btn {
-    left: 50%;
-    transform: translateX(-50%);
-    color: $secondary;
-    height: 48px;
-    font-size: 20px;
-    font-weight: 400;
-    border-radius: 24px;
-    padding: 0 64px;
-    margin-top: 100px;
-    font-family: 'Raleway', 'Helvetica', 'roboto', arial, sans-serif;
-    cursor: pointer;
-    background-color: inherit;
-    border: 3px solid $secondary;
-  }
-  .work-btn:hover {
-    background-color: $secondary;
-    color: #fefefe;
-  }
-  a {
-    width: auto;
-  }
+.fancybox__slide.has-caption {
+  flex-direction: row;
 }
+
+.fancybox__caption {
+  max-width: 250px;
+  padding: 1rem 3rem 1rem 1rem;
+}
+
+.work {
+  background-color: #ffffff;
+  overflow-x: hidden;
+
+  .work-list {
+    margin: 10px 0 120px 0;
+
+    ul {
+      list-style: none;
+    }
+    li {
+      width: clamp(500px, 60vw, 700px);
+      padding-right: 1rem;
+    }
+
+    .work-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh; 
+    }
+    
+    .work-container {
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+  
+    .wrapper-text {
+      font-size: clamp(4rem, 15vw, 16rem);
+    }
+    
+    .text-top {
+      position: absolute;
+      color: #1a2b4c;
+      font-weight: 900;
+      pointer-events: none; /* 讓文字不影響滑鼠事件 */
+      left: 50%;
+      transform: translate(-50%, -50%) translateX(-100%); /* 從螢幕最左邊出現 */;
+    }
+    
+  
+    #image-track {
+      display: flex;
+      gap: 4vmin;
+      position: relative;
+      left: 0;
+  
+    }
+    
+    #image-track > .image {
+      width: 80vmin;
+      height: 54vmin;
+      object-fit: cover;
+      object-position: 100% center;
+    
+    }
+  }
+
+
+}
+
+
 @include laptop {
   .work {
     .imgbox {
@@ -1210,6 +1232,12 @@
       margin-top: 10px;
       z-index: 2;
     }
+
+    .work-list{
+      .work-section {
+        height: 30vh;
+      }
+    }
   }
   .p-md {
     padding-right: 20px;
@@ -1219,8 +1247,9 @@
 /** $Contact
 ---------------------*/
 .contact {
-  padding-top: 150px;
-  height: 1300px;
+  padding: 150px 0 350px 0;
+  height: 100%;
+  
 
   .contact-bg {
     position: absolute;
@@ -1240,7 +1269,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-image: url(../images/bg.png);
+    // background-image: url(../images/bg.png);
     opacity: 0.03;
   }
   .form {
@@ -1300,8 +1329,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    height: 200px;
-    margin-top: 50px;
+    width: 80vw;
     text-align: center;
     font-size: 23px;
 
@@ -1319,7 +1347,7 @@
   height: 180px;
   top: 0;
   z-index: 1;
-  background-color: #fefefe;
+  background-color: #ffffff;
   transform: skewY(-5deg) translateY(50%);
 }
 @include pad {
@@ -1340,9 +1368,9 @@
       font-size: 40px !important;
     }
 
-    .d-md-n {
-      display: none;
-    }
+    // .d-md-n {
+    //   display: none;
+    // }
   }
 }
 /*-------------------------*/
