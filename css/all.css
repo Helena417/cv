@@ -5449,7 +5449,10 @@ ul {
     z-index: 2;
   }
   .work .work-list .work-section {
-    height: 30vh;
+    height: 40vh;
+  }
+  .work .work-list .text-top {
+    font-size: 84px;
   }
   .p-md {
     padding-right: 20px;
