@@ -7,9 +7,6 @@ $(document).ready(function () {
 
 // 拖動效果變數
   let isDragging = false;
-  let startX = 0; // 起始拖動時的 X 坐標
-  let startScrollLeft = 0; // 起始拖動時的滾動條左偏移
-  let startPercentage = 0; // 起始拖動時的百分比
 
   window.start = false;
 
@@ -21,7 +18,7 @@ $(document).ready(function () {
               const content = section.querySelector('.wrapper-text');
               if (content) {
 
-                  const [x, xEnd] = index % 2 ? ['100%', (content.scrollWidth - section.offsetWidth) * -1] : [content.scrollWidth * -1, 0];
+                  const [x, xEnd] = index % 2 ? ['100%', (content.scrollWidth - section.offsetWidth) * -0.95] : [content.scrollWidth * -1, 0];
 
                   // 設定每個section的滾動效果
                   gsap.fromTo(content, {x}, {
@@ -29,7 +26,8 @@ $(document).ready(function () {
                       scrollTrigger: {
                         objectPosition: "center center",
                           trigger: section, // 將觸發器改為整個section元素
-                          scrub: 0.5
+                          scrub: 0.3,
+                          duration: 3
                       }
                   });
               }
