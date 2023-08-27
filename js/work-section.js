@@ -18,7 +18,7 @@ $(document).ready(function () {
               const content = section.querySelector('.wrapper-text');
               if (content) {
 
-                  const [x, xEnd] = index % 2 ? ['100%', (content.scrollWidth - section.offsetWidth) * -0.95] : [content.scrollWidth * -1, 0];
+                  const [x, xEnd] = index % 2 ? ['100%', (content.scrollWidth - section.offsetWidth) * -0.9] : [content.scrollWidth * -1, 0];
 
                   // 設定每個section的滾動效果
                   gsap.fromTo(content, {x}, {

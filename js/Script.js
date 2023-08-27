@@ -55,8 +55,10 @@ $(document).ready(function () {
       $aboutAnimationL .addClass("bgL2");
     }
 
-  })
 
+
+  })  
+  
 })
 
 var state ={
